@@ -55,6 +55,60 @@
   }, { passive: true });
   onScroll();
 
+  /* ---------- animated hero background ---------- */
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+    var credit = document.getElementById('hero-credit');
+    if (slides.length < 2 || reduceMotion) return;
+    var idx = 0, timer = null, heroVisible = true;
+    var INTERVAL = 7000;
+    function ready(img) { return img.getAttribute('src') && img.complete && img.naturalWidth > 0; }
+    function loadRest() {
+      slides.forEach(function (img) {
+        var src = img.getAttribute('data-src');
+        if (src && !img.getAttribute('src')) img.setAttribute('src', src);
+      });
+    }
+    function show(n) {
+      slides[idx].classList.remove('is-active');
+      slides[idx].setAttribute('aria-hidden', 'true');
+      idx = n;
+      slides[idx].classList.add('is-active');
+      slides[idx].removeAttribute('aria-hidden');
+      if (credit) {
+        credit.classList.add('is-fading');
+        setTimeout(function () {
+          credit.textContent = slides[idx].getAttribute('data-credit') || '';
+          credit.classList.remove('is-fading');
+        }, 600);
+      }
+    }
+    function next() {
+      // skip slides that have not finished loading (slow network) or failed
+      for (var k = 1; k < slides.length; k++) {
+        var n = (idx + k) % slides.length;
+        if (ready(slides[n])) { show(n); return; }
+      }
+    }
+    function run() {
+      stop();
+      if (heroVisible && !document.hidden) timer = setInterval(next, INTERVAL);
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    // fetch the other slides only after the first photo is on screen
+    if (ready(slides[0])) loadRest();
+    else slides[0].addEventListener('load', loadRest);
+    window.addEventListener('load', loadRest);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        run();
+      }).observe(document.querySelector('.hero'));
+    }
+    document.addEventListener('visibilitychange', run);
+    run();
+  })();
+
   /* ---------- count-up ---------- */
   function countUp(el) {
     var to = parseInt(el.getAttribute('data-to'), 10);
