@@ -162,6 +162,240 @@
     }
   });
 
+  /* ---------- toast ---------- */
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+  function toast(msg) {
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('is-on'); }, 2600);
+  }
+
+  /* ---------- pronunciation (Web Speech API, vi-VN) ---------- */
+  var synth = window.speechSynthesis;
+  var viVoice = null;
+  var warnedNoVoice = false;
+  function pickVoice() {
+    if (!synth) return;
+    var voices = synth.getVoices() || [];
+    viVoice = voices.filter(function (v) { return /^vi(-|_|$)/i.test(v.lang); })[0] || null;
+  }
+  if (synth) {
+    pickVoice();
+    if (typeof synth.addEventListener === 'function') synth.addEventListener('voiceschanged', pickVoice);
+    else synth.onvoiceschanged = pickVoice;
+  }
+  var speakingEl = null;
+  function say(text, el) {
+    if (!synth || typeof window.SpeechSynthesisUtterance !== 'function') {
+      toast('이 브라우저는 음성 재생을 지원하지 않습니다.');
+      return;
+    }
+    synth.cancel();
+    if (speakingEl) speakingEl.classList.remove('is-speaking');
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'vi-VN';
+    u.rate = 0.8;
+    if (!viVoice) pickVoice();
+    if (viVoice) u.voice = viVoice;
+    else if (!warnedNoVoice) {
+      warnedNoVoice = true;
+      toast('기기에 베트남어 음성이 없으면 발음이 부정확할 수 있어요.');
+    }
+    speakingEl = el || null;
+    if (el) el.classList.add('is-speaking');
+    var clear = function () { if (el) el.classList.remove('is-speaking'); };
+    u.onend = clear;
+    u.onerror = clear;
+    synth.speak(u);
+  }
+  var SPEAKER = '<svg class="say-ico" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z" fill="currentColor"/></svg>';
+  // Turn every pronunciation chip into a tap-to-listen button
+  Array.prototype.forEach.call(document.querySelectorAll('.pron span:not(.pron-label)'), function (chip) {
+    var b = chip.querySelector('b[lang="vi"]');
+    if (!b) return;
+    chip.setAttribute('data-say', b.textContent.trim());
+    chip.insertAdjacentHTML('beforeend', SPEAKER);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.pron-label'), function (l) {
+    l.insertAdjacentHTML('beforeend', '<small>탭하여 듣기</small>');
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-say]'), function (el) {
+    if (el.tagName !== 'BUTTON') {
+      el.setAttribute('role', 'button');
+      el.setAttribute('tabindex', '0');
+      if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', el.getAttribute('data-say') + ' 발음 듣기');
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); say(el.getAttribute('data-say'), el); }
+      });
+    }
+    el.addEventListener('click', function () { say(el.getAttribute('data-say'), el); });
+  });
+
+  /* ---------- Hội Lim countdown ---------- */
+  (function () {
+    var out = document.getElementById('lim-dday');
+    if (!out) return;
+    // Gregorian dates of lunar 1/13 (Tết 2027-02-06, Tết 2028-01-26)
+    var DATES = ['2027-02-18', '2028-02-07'];
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    for (var i = 0; i < DATES.length; i++) {
+      var p = DATES[i].split('-');
+      var d = new Date(+p[0], +p[1] - 1, +p[2]);
+      var diff = Math.round((d - today) / 86400000);
+      if (diff < 0) continue;
+      out.innerHTML = diff === 0
+        ? '<b>오늘은 Hội Lim 축제 날!</b>'
+        : '다음 축제까지 <b>D-' + diff + '</b> <span>(' + p[0] + '년 ' + (+p[1]) + '월 ' + (+p[2]) + '일)</span>';
+      out.hidden = false;
+      return;
+    }
+  })();
+
+  /* ---------- quiz ---------- */
+  var QUIZ = [
+    { q: 'Quan họ가 유네스코 인류무형문화유산에 등재된 해는?', opts: ['2003년', '2009년', '2011년', '2016년'], a: 1,
+      exp: '2009년 9월 30일, 아부다비 제4차 정부간위원회(4.COM)에서 등재되었다.', link: '#intro' },
+    { q: '옛 낀박 지역의 Quan họ 마을은 모두 몇 곳일까?', opts: ['24곳', '44곳', '49곳', '213곳'], a: 2,
+      exp: '박닌성 44곳 + 박장성 5곳 = 49곳. 213은 가락의 수다.', link: '#region' },
+    { q: 'Quan họ를 부르는 방식으로 맞는 것은?', opts: ['장구 반주에 맞춰 부른다', '반주 없이 목소리로만 부른다', '한 사람이 혼자 부른다', '악기 합주가 중심이다'], a: 1,
+      exp: 'Quan họ는 반주 없는 육성 민요로, 남녀가 짝을 지어 주고받는다.', link: '#art' },
+    { q: 'O / X — kết chạ로 결연한 두 마을의 남녀는 서로 결혼할 수 있다.', opts: ['O', 'X'], a: 1, ox: true,
+      exp: '결연한 두 마을은 형제 마을이므로, 남녀 간 혼인을 금지하는 불문율이 있다.', link: '#values' },
+    { q: 'Hội Lim 축제가 열리는 날은?', opts: ['음력 1월 13일', '음력 8월 15일', '양력 1월 1일', '음력 5월 5일'], a: 0,
+      exp: '음력 1월 13일, 박닌성 띠엔주현 림 일대에서 열린다. 음력 8월 15일은 한가위다.', link: '#stage' },
+    { q: '발성의 4대 기준이 아닌 것은?', opts: ['vang (울림)', 'rền (여운)', 'nón (모자)', 'nảy (튐)'], a: 2,
+      exp: '4대 기준은 vang · rền · nền · nảy. nón은 모자(nón quai thao)다.', link: '#art' },
+    { q: 'Quan họ와 강강술래의 공통점이 아닌 것은?', opts: ['2009년 같은 회의에서 등재', '주고받는 구조', '공동체 명절의 노래', '여성만 부르는 노래'], a: 3,
+      exp: '강강술래는 마을 여성들의 노래지만, Quan họ는 남녀가 화답하는 노래다.', link: '#compare' }
+  ];
+  var GRADES = [
+    { min: 7, title: 'Quan họ 명창', msg: '만점! 오늘부터 liền anh · liền chị로 인정합니다.' },
+    { min: 5, title: 'Quan họ 소리꾼', msg: '훌륭해요. 호이 림 축제에 가도 되겠어요.' },
+    { min: 3, title: 'Quan họ 연습생', msg: '좋은 출발이에요. 틀린 부분을 다시 확인해 볼까요?' },
+    { min: 0, title: 'Quan họ 새내기', msg: '괜찮아요. 발표 내용을 한 번 더 둘러보고 다시 도전해 보세요.' }
+  ];
+  var quizEl = document.getElementById('quiz-app');
+  var qi = 0, score = 0, answers = [];
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function buzz(p) { if (navigator.vibrate) { try { navigator.vibrate(p); } catch (e) { /* ignore */ } } }
+  function renderQ() {
+    var item = QUIZ[qi];
+    var html =
+      '<div class="quiz-top"><span class="quiz-count">문제 <b>' + (qi + 1) + '</b> / ' + QUIZ.length + '</span>' +
+      '<span class="quiz-score">점수 ' + score + '</span></div>' +
+      '<div class="quiz-bar"><span style="transform:scaleX(' + (qi / QUIZ.length) + ')"></span></div>' +
+      '<h3 class="quiz-q" tabindex="-1">' + esc(item.q) + '</h3>' +
+      '<div class="quiz-opts' + (item.ox ? ' is-ox' : '') + '">';
+    item.opts.forEach(function (o, i) {
+      html += '<button type="button" class="quiz-opt" data-i="' + i + '"><span class="quiz-key">' +
+        (item.ox ? '' : String.fromCharCode(65 + i)) + '</span><span>' + esc(o) + '</span></button>';
+    });
+    html += '</div><div class="quiz-feedback" aria-live="polite"></div>';
+    quizEl.innerHTML = html;
+    Array.prototype.forEach.call(quizEl.querySelectorAll('.quiz-opt'), function (btn) {
+      btn.addEventListener('click', function () { answer(+btn.getAttribute('data-i')); });
+    });
+  }
+  function answer(i) {
+    var item = QUIZ[qi];
+    var ok = i === item.a;
+    if (ok) score++;
+    answers.push(ok);
+    buzz(ok ? 25 : [60, 50, 60]);
+    Array.prototype.forEach.call(quizEl.querySelectorAll('.quiz-opt'), function (btn) {
+      var bi = +btn.getAttribute('data-i');
+      btn.disabled = true;
+      if (bi === item.a) btn.classList.add('is-correct');
+      else if (bi === i) btn.classList.add('is-wrong');
+    });
+    quizEl.querySelector('.quiz-score').textContent = '점수 ' + score;
+    var last = qi === QUIZ.length - 1;
+    var fb = quizEl.querySelector('.quiz-feedback');
+    fb.className = 'quiz-feedback ' + (ok ? 'ok' : 'no');
+    fb.innerHTML =
+      '<p class="quiz-verdict">' + (ok ? '정답!' : '아쉬워요') + '</p>' +
+      '<p>' + esc(item.exp) + '</p>' +
+      '<div class="quiz-actions"><a class="link-btn" href="' + item.link + '">관련 내용 보기</a>' +
+      '<button type="button" class="btn-primary quiz-next">' + (last ? '결과 보기' : '다음 문제') + '</button></div>';
+    var next = fb.querySelector('.quiz-next');
+    next.addEventListener('click', function () {
+      qi++;
+      if (qi < QUIZ.length) renderQ(); else renderResult();
+      var h = quizEl.querySelector('.quiz-q, .quiz-result-title');
+      if (h) h.focus({ preventScroll: true });
+      var top = quizEl.getBoundingClientRect().top;
+      if (top < header.offsetHeight || top > window.innerHeight * 0.5) scrollToId('quiz');
+    });
+    fb.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+  function renderResult() {
+    var g = GRADES.filter(function (x) { return score >= x.min; })[0];
+    var dots = answers.map(function (ok, i) {
+      return '<li class="' + (ok ? 'ok' : 'no') + '" title="' + (i + 1) + '번 ' + (ok ? '정답' : '오답') + '">' + (i + 1) + '</li>';
+    }).join('');
+    quizEl.innerHTML =
+      '<div class="quiz-result">' +
+      '<div class="quiz-ring" style="--p:' + (score / QUIZ.length) + '"><span><b>' + score + '</b>/' + QUIZ.length + '</span></div>' +
+      '<p class="quiz-grade-label">나의 등급</p>' +
+      '<h3 class="quiz-result-title" tabindex="-1">' + esc(g.title) + '</h3>' +
+      '<p class="quiz-msg">' + esc(g.msg) + '</p>' +
+      '<ol class="quiz-dots" aria-label="문항별 결과">' + dots + '</ol>' +
+      '<button type="button" class="btn-primary quiz-retry">다시 풀기</button>' +
+      '</div>';
+    buzz(score === QUIZ.length ? [40, 60, 40, 60, 120] : 40);
+    if (score === QUIZ.length) confetti();
+    quizEl.querySelector('.quiz-retry').addEventListener('click', function () {
+      qi = 0; score = 0; answers = []; renderQ();
+      quizEl.querySelector('.quiz-q').focus({ preventScroll: true });
+    });
+  }
+  function confetti() {
+    if (reduceMotion) return;
+    var box = document.createElement('div');
+    box.className = 'confetti';
+    box.setAttribute('aria-hidden', 'true');
+    var colors = ['#7A1F2B', '#C9A227', '#1F4E5F', '#F2E0DA', '#8C6D10'];
+    for (var i = 0; i < 40; i++) {
+      var s = document.createElement('i');
+      s.style.left = Math.random() * 100 + '%';
+      s.style.background = colors[i % colors.length];
+      s.style.animationDelay = Math.random() * 0.4 + 's';
+      s.style.animationDuration = 1.6 + Math.random() * 1.2 + 's';
+      s.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+      box.appendChild(s);
+    }
+    quizEl.appendChild(box);
+    setTimeout(function () { box.remove(); }, 3200);
+  }
+  if (quizEl) renderQ();
+
+  /* ---------- floating quiz button ---------- */
+  var fab = document.getElementById('quiz-fab');
+  if (fab) {
+    var hideZones = ['top', 'quiz', 'closing', 'sources'].map(function (id) {
+      return id === 'top' ? document.querySelector('.hero') : document.getElementById(id);
+    }).filter(Boolean);
+    var fabTick = false;
+    var updateFab = function () {
+      fabTick = false;
+      var vh = window.innerHeight;
+      var hide = hideZones.some(function (z) {
+        var r = z.getBoundingClientRect();
+        return r.top < vh * 0.85 && r.bottom > vh * 0.15;
+      });
+      fab.classList.toggle('is-on', !hide);
+    };
+    window.addEventListener('scroll', function () {
+      if (!fabTick) { fabTick = true; requestAnimationFrame(updateFab); }
+    }, { passive: true });
+    window.addEventListener('resize', updateFab);
+    updateFab();
+  }
+
   /* ---------- Leaflet map ---------- */
   initMap();
 

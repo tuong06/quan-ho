@@ -41,6 +41,7 @@
           <li><a href="#values">가치</a></li>
           <li><a href="#today">보전</a></li>
           <li><a href="#compare">비교</a></li>
+          <li><a href="#quiz">퀴즈</a></li>
           <li><a href="#closing">맺음말</a></li>
           <li><a href="#sources">출처</a></li>
         </ol>
@@ -64,7 +65,8 @@
           <span lang="vi">Quan họ</span>
           <span lang="vi" class="hero-title-sub">Bắc Ninh</span>
         </h1>
-        <p class="hero-tag reveal"><span class="pill">민요</span> <span class="hero-pron">꽌호 박닌</span></p>
+        <p class="hero-tag reveal"><span class="pill">민요</span> <span class="hero-pron">꽌호 박닌</span>
+          <button type="button" class="say-btn" data-say="Quan họ Bắc Ninh" aria-label="Quan họ Bắc Ninh 발음 듣기"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z" fill="currentColor"/></svg><span>발음 듣기</span></button></p>
         <blockquote class="hero-quote reveal">
           “베트남 북부 출신으로서, 어릴 때부터 들어온 꽌호를 한국어로 소개하게 되어 영광입니다.”
         </blockquote>
@@ -125,11 +127,12 @@
           </ol>
 
           <figure class="photo photo-card reveal" data-slot="intro-quanho.jpg">
-            <img src="assets/img/intro-quanho.jpg" alt="Quan họ 공연 모습" loading="lazy" onerror="this.hidden=true">
+            <img src="assets/img/intro-quanho.jpg" alt="박닌 문화센터에 전시된 Quan họ 전통 의상 — 왼쪽은 khăn mỏ quạ 두건과 겹저고리·허리띠를 갖춘 liền chị 의상, 오른쪽은 파란 áo the 차림의 liền anh 의상, 위쪽에 nón quai thao·khăn xếp·검은 우산" loading="lazy" onerror="this.hidden=true">
             <figcaption class="ph-note">
               <strong>이미지 자리 · cần thay ảnh thật</strong>
-              <span>assets/img/intro-quanho.jpg — Quan họ 사진 (출처는 사진 추가 시 기재)</span>
+              <span>assets/img/intro-quanho.jpg</span>
             </figcaption>
+            <p class="photo-credit">by vi:User:Viethavvh / Wikimedia Commons / CC BY-SA 3.0</p>
           </figure>
         </div>
 
@@ -250,12 +253,12 @@
           <div class="card voice reveal">
             <h3>발성의 4대 기준</h3>
             <ul class="voice-list">
-              <li><b>울림</b><span lang="vi">vang</span><em>방</em></li>
-              <li><b>여운</b><span lang="vi">rền</span><em>젠</em></li>
-              <li><b>바탕</b><span lang="vi">nền</span><em>넨</em></li>
-              <li><b>튐</b><span lang="vi">nảy</span><em>나이</em></li>
+              <li data-say="vang"><b>울림</b><span lang="vi">vang</span><em>방</em></li>
+              <li data-say="rền"><b>여운</b><span lang="vi">rền</span><em>젠</em></li>
+              <li data-say="nền"><b>바탕</b><span lang="vi">nền</span><em>넨</em></li>
+              <li data-say="nảy"><b>튐</b><span lang="vi">nảy</span><em>나이</em></li>
             </ul>
-            <p class="fine">번역 표기는 연구자마다 다를 수 있다.</p>
+            <p class="fine">카드를 탭하면 베트남어 발음이 들린다. 번역 표기는 연구자마다 다를 수 있다.</p>
           </div>
         </div>
 
@@ -316,6 +319,7 @@
               <li>박닌성 띠엔주(<span lang="vi">Tiên Du</span>)현 림(<span lang="vi">Lim</span>) 일대</li>
               <li>용 모양 배를 타고 호수를 돌며 노래하는 공연도 진행된다</li>
             </ul>
+            <p class="dday" id="lim-dday" hidden></p>
             <button type="button" class="link-btn" data-fly="tiendu">지도에서 위치 보기 →</button>
           </div>
         </article>
@@ -353,7 +357,7 @@
           </article>
 
           <figure class="photo photo-card photo-tall reveal" data-slot="costume.jpg">
-            <img src="assets/img/costume.jpg" alt="Quan họ 전통 의상을 입은 소리꾼" loading="lazy" onerror="this.hidden=true">
+            <img src="assets/img/costume.jpg" alt="박닌 문화센터에 전시된 liền chị·liền anh 전통 의상과 nón quai thao, khăn xếp, 검은 우산" loading="lazy" onerror="this.hidden=true">
             <figcaption class="ph-note">
               <strong>이미지 자리 · cần thay ảnh thật</strong>
               <span>assets/img/costume.jpg — 슬라이드 7 사진</span>
@@ -547,17 +551,31 @@
       </div>
     </section>
 
+    <!-- ============ 09. 퀴즈 ============ -->
+    <section class="section section-alt quiz-section" id="quiz" aria-labelledby="quiz-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num">09 · 함께 풀어요</p>
+          <h2 id="quiz-title">Quan họ 퀴즈</h2>
+          <p class="lead">발표를 잘 들으셨나요? 7문제를 풀고 나의 Quan họ 등급을 확인해 보세요.</p>
+        </header>
+        <div class="quiz reveal" id="quiz-app">
+          <noscript><p>퀴즈를 풀려면 JavaScript를 켜 주세요.</p></noscript>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ 10. 맺음말 ============ -->
     <section class="section closing" id="closing" aria-labelledby="closing-title">
       <figure class="photo closing-photo" data-slot="closing.jpg">
-        <img src="assets/img/closing.jpg" alt="" loading="lazy" onerror="this.hidden=true">
+        <img src="assets/img/closing.jpg" alt="호수 위 정자와 아치형 다리가 있는 베트남 북부 마을 풍경" loading="lazy" onerror="this.hidden=true">
         <figcaption class="ph-note">
           <strong>이미지 자리 · cần thay ảnh thật</strong>
           <span>assets/img/closing.jpg — 슬라이드 11 사진</span>
         </figcaption>
       </figure>
       <div class="container closing-inner">
-        <p class="section-num reveal">09 · 맺음말</p>
+        <p class="section-num reveal">10 · 맺음말</p>
         <h2 id="closing-title" class="reveal">노래로 이어지는 정(情),<br><span lang="vi">Quan họ</span>는 계속된다</h2>
         <p class="closing-text reveal">
           낀박 사람들의 정과 예절이 담긴 살아있는 문화유산이며,
@@ -596,7 +614,7 @@
             <p class="fine">발표자 소개 사진(광운대학교 본관 전경): 대학저널(UNN, unn.net)</p></li>
           <li id="src-intro"><h3>01 소개와 등재</h3>
             <p><a href="https://ich.unesco.org" rel="noopener" target="_blank">UNESCO ICH (ich.unesco.org)</a> · <a href="https://dsvh.gov.vn" rel="noopener" target="_blank"><span lang="vi">Cục Di sản văn hóa</span> (dsvh.gov.vn)</a></p>
-            <p class="fine">사진: 이미지 자리 · cần thay ảnh thật (사진 추가 시 출처 기재)</p></li>
+            <p class="fine">사진: by vi:User:Viethavvh / Wikimedia Commons / CC BY-SA 3.0</p></li>
           <li id="src-region"><h3>02 지역</h3>
             <p><a href="https://dsvh.gov.vn" rel="noopener" target="_blank"><span lang="vi">Cục Di sản văn hóa</span> (dsvh.gov.vn)</a></p>
             <p class="fine">지도 타일: © <a href="https://www.openstreetmap.org/copyright" rel="noopener" target="_blank">OpenStreetMap</a> contributors, © <a href="https://carto.com/attributions" rel="noopener" target="_blank">CARTO</a> · 지도 라이브러리 Leaflet (BSD-2). 마커와 권역은 근사·개략 표시.</p></li>
@@ -613,7 +631,7 @@
             <p><a href="https://www.vietnamplus.vn" rel="noopener" target="_blank">VietnamPlus</a> · <span lang="vi">Thương hiệu &amp; Công luận</span></p></li>
           <li id="src-compare"><h3>08 한국과의 비교</h3>
             <p><a href="https://ich.unesco.org" rel="noopener" target="_blank">UNESCO ICH (ich.unesco.org)</a> · <a href="https://www.heritage.go.kr" rel="noopener" target="_blank">국가유산청 (heritage.go.kr)</a></p></li>
-          <li id="src-closing"><h3>09 맺음말</h3>
+          <li id="src-closing"><h3>10 맺음말</h3>
             <p><a href="https://ich.unesco.org" rel="noopener" target="_blank">UNESCO ICH (ich.unesco.org)</a> · <a href="https://dsvh.gov.vn" rel="noopener" target="_blank">dsvh.gov.vn</a></p>
             <p class="fine">사진: © Nguoivietbao / Wikimedia Commons / CC BY-SA 4.0</p></li>
         </ol>
@@ -625,6 +643,12 @@
     <p>© 2026 레깟뜨엉 · 광운대학교 정보융합학부 · 대학한국어(01) 발표 자료</p>
     <a href="#top" class="to-top">맨 위로 ↑</a>
   </footer>
+
+  <a class="quiz-fab" id="quiz-fab" href="#quiz" aria-label="퀴즈로 이동">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 16.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm1.4-5.3c-.6.4-.9.7-.9 1.3v.4h-2v-.5c0-1.3.7-2 1.4-2.5.6-.4 1-.7 1-1.4a1.4 1.4 0 0 0-2.8 0H8.1a3.4 3.4 0 0 1 6.8 0c0 1.4-.8 2.1-1.5 2.7z" fill="currentColor"/></svg>
+    <span>퀴즈 풀기</span>
+  </a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/vendor/leaflet/leaflet.js"></script>
   <script src="assets/vendor/qrcode.js"></script>

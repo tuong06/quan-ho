@@ -6,6 +6,13 @@ Trang tĩnh one-page tóm tắt bài thuyết trình tiếng Hàn *Quan họ B�
 - Leaflet 1.9.4 và `qrcode-generator` 1.4.4 được vendor trong `assets/vendor/` (không phụ thuộc CDN).
 - Font: Noto Sans KR / Noto Serif KR (Hangul) + Be Vietnam Pro / Noto Serif (chữ Latin có dấu tiếng Việt) qua Google Fonts.
 
+## Tương tác
+
+- **Nghe phát âm**: chạm vào chip 발음 도움말, thẻ 발성 4대 기준 hoặc nút 발음 듣기 ở Hero — dùng Web Speech API giọng `vi-VN` (không cần file âm thanh). Nếu máy không có giọng tiếng Việt, trang hiện thông báo.
+- **Quan họ 퀴즈** (mục 09): 7 câu trắc nghiệm/OX, chấm điểm tức thì, giải thích + link về đúng mục, rung nhẹ trên Android, xếp hạng cuối bài. Sửa câu hỏi trong mảng `QUIZ` ở `script.js`.
+- **Đếm ngược Hội Lim**: D-day tới ngày 13 tháng Giêng âm lịch tiếp theo (mảng `DATES` trong `script.js`, hiện có 2027-02-18 và 2028-02-07).
+- **Nút "퀴즈 풀기" nổi** trên điện thoại, tự ẩn ở Hero, mục quiz và phần cuối trang.
+
 ## Cấu trúc
 
 ```
