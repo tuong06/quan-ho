@@ -12,9 +12,11 @@
   var navLinks = Array.prototype.slice.call(navList.querySelectorAll('a'));
 
   /* ---------- smooth scroll for in-page anchors ---------- */
+  var srcDetails = document.getElementById('src-details');
   function scrollToId(id) {
     var el = document.getElementById(id);
     if (!el) return;
+    if (srcDetails && id.indexOf('src-') === 0) srcDetails.open = true;
     var top = el.getBoundingClientRect().top + window.pageYOffset - (header.offsetHeight + 8);
     window.scrollTo({ top: id === 'top' ? 0 : top, behavior: reduceMotion ? 'auto' : 'smooth' });
     if (history.replaceState) history.replaceState(null, '', '#' + id);
@@ -109,6 +111,50 @@
     run();
   })();
 
+  if (srcDetails && /^#src-/.test(location.hash)) srcDetails.open = true;
+
+  /* ---------- section watermark numbers ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.section-head'), function (h) {
+    var num = h.querySelector('.section-num');
+    var m = num && num.textContent.match(/^\s*(\d{2})/);
+    if (m) h.setAttribute('data-n', m[1]);
+  });
+
+  /* ---------- costume tabs (phones / tablets) ---------- */
+  (function () {
+    var grid = document.getElementById('costume-grid');
+    if (!grid) return;
+    var tabs = Array.prototype.slice.call(grid.querySelectorAll('[data-attire]'));
+    function select(k, focus) {
+      grid.setAttribute('data-show', k);
+      tabs.forEach(function (t) {
+        var on = t.getAttribute('data-attire') === k;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        if (on && focus) t.focus();
+      });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t.getAttribute('data-attire')); });
+      t.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        select(n.getAttribute('data-attire'), true);
+      });
+    });
+    // swipe left/right on the panel to switch
+    var x0 = null;
+    grid.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    grid.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      x0 = null;
+      if (Math.abs(dx) < 60 || !e.target.closest('.attire')) return;
+      select(dx < 0 ? 'm' : 'f');
+    });
+    select('f');
+  })();
+
   /* ---------- count-up ---------- */
   function countUp(el) {
     var to = parseInt(el.getAttribute('data-to'), 10);
@@ -196,7 +242,10 @@
   qrLink.textContent = '';
   shown.split('/').forEach(function (part, i) {
     if (i) { qrLink.appendChild(document.createElement('wbr')); qrLink.appendChild(document.createTextNode('/')); }
-    qrLink.appendChild(document.createTextNode(part));
+    var seg = document.createElement('span');
+    seg.className = 'seg';
+    seg.textContent = part;
+    qrLink.appendChild(seg);
   });
   if (typeof window.qrcode === 'function') {
     var qr = window.qrcode(0, 'M');
@@ -205,6 +254,14 @@
     qrBox.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
     var path = qrBox.querySelector('path');
     if (path) path.setAttribute('fill', '#2B211B');
+  }
+  var shareBtn = document.getElementById('share-btn');
+  if (shareBtn && navigator.share) {
+    shareBtn.hidden = false;
+    shareBtn.addEventListener('click', function () {
+      navigator.share({ title: document.title, text: 'Quan họ Bắc Ninh · 베트남 민요 꽌호 발표 자료', url: url })
+        .catch(function () { /* user cancelled */ });
+    });
   }
   var copyBtn = document.getElementById('copy-url');
   copyBtn.addEventListener('click', function () {
@@ -554,7 +611,13 @@
 
     function markActive(id) {
       Array.prototype.forEach.call(listEl.querySelectorAll('button'), function (b) {
-        b.classList.toggle('is-active', b.getAttribute('data-id') === id);
+        var on = b.getAttribute('data-id') === id;
+        b.classList.toggle('is-active', on);
+        // on phones the list is a horizontal strip: keep the active card in view
+        if (on && listEl.scrollWidth > listEl.clientWidth) {
+          var li = b.parentNode;
+          listEl.scrollTo({ left: li.offsetLeft - (listEl.clientWidth - li.offsetWidth) / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
+        }
       });
     }
 

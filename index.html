@@ -235,7 +235,7 @@
               <p>가락(<span lang="vi">làn điệu</span>)</p>
             </div>
             <div>
-              <p class="big">약 <span class="count" data-to="400">400</span><small>여 곡</small></p>
+              <p class="big"><small class="pre">약</small><span class="count" data-to="400">400</span><small>여 곡</small></p>
               <p>전해지는 가사</p>
             </div>
             <div class="numbers-foot">
@@ -338,8 +338,12 @@
           <p class="lead"><span lang="vi">liền chị</span>는 겹겹의 <span lang="vi">áo mớ ba mớ bảy</span>를, <span lang="vi">liền anh</span>은 검은 <span lang="vi">áo the</span>를 갖춘다.</p>
         </header>
 
-        <div class="costume-grid">
-          <article class="card attire reveal">
+        <div class="costume-grid" id="costume-grid" data-show="f">
+          <div class="attire-tabs" role="tablist" aria-label="의상 선택">
+            <button type="button" role="tab" id="tab-f" aria-controls="attire-f" aria-selected="true" data-attire="f">여성 · <span lang="vi">liền chị</span></button>
+            <button type="button" role="tab" id="tab-m" aria-controls="attire-m" aria-selected="false" data-attire="m">남성 · <span lang="vi">liền anh</span></button>
+          </div>
+          <article class="card attire attire-f reveal" id="attire-f" role="tabpanel" aria-labelledby="tab-f">
             <p class="attire-who">여성 · <span lang="vi">liền chị</span></p>
             <ul>
               <li><b lang="vi">áo mớ ba, mớ bảy</b><span>겹겹이 겹친 저고리</span></li>
@@ -359,7 +363,7 @@
             <p class="photo-credit">by vi:User:Viethavvh via Wikimedia Commons — CC BY-SA 3.0</p>
           </figure>
 
-          <article class="card attire attire-m reveal">
+          <article class="card attire attire-m reveal" id="attire-m" role="tabpanel" aria-labelledby="tab-m">
             <p class="attire-who">남성 · <span lang="vi">liền anh</span></p>
             <ul>
               <li><b lang="vi">áo the</b><span>검은 오단 저고리(두 겹)</span></li>
@@ -581,9 +585,15 @@
           <div class="qr-card reveal">
             <div class="qr" id="qr" aria-hidden="true"></div>
             <div>
-              <p class="qr-title">휴대전화로 보기</p>
+              <p class="qr-title"><span class="only-fine">휴대전화로 보기</span><span class="only-coarse">이 페이지 공유하기</span></p>
               <a class="qr-url" id="qr-url" href="https://tuong06.github.io/quan-ho/">tuong06.github.io/quan-ho</a>
-              <button type="button" class="link-btn" id="copy-url">링크 복사</button>
+              <div class="share-row">
+                <button type="button" class="btn-share" id="share-btn" hidden>
+                  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-6.7-3.4a3 3 0 0 0 0-1.6l6.7-3.4A3 3 0 1 0 15 7l-6.7 3.4a3 3 0 1 0 0 3.2L15 17a3 3 0 1 0 3-1z" fill="currentColor"/></svg>
+                  공유하기
+                </button>
+                <button type="button" class="link-btn" id="copy-url">링크 복사</button>
+              </div>
             </div>
           </div>
           <div class="thanks reveal">
@@ -599,7 +609,11 @@
     <!-- ============ SOURCES ============ -->
     <section class="section sources" id="sources" aria-labelledby="sources-title">
       <div class="container">
-        <h2 id="sources-title">출처</h2>
+        <details class="src-details" id="src-details">
+          <summary>
+            <h2 id="sources-title">출처</h2>
+            <span class="src-hint">섹션별 출처 · 사진 저작권 <b>펼치기</b></span>
+          </summary>
         <p class="fine">각 섹션의 출처는 원본 발표 자료(슬라이드)에 표기된 출처를 그대로 따랐다.</p>
         <ol class="src-list">
           <li id="src-hero"><h3>표지</h3>
@@ -628,6 +642,7 @@
             <p><a href="https://ich.unesco.org" rel="noopener" target="_blank">UNESCO ICH (ich.unesco.org)</a> · <a href="https://dsvh.gov.vn" rel="noopener" target="_blank">dsvh.gov.vn</a></p>
             <p class="fine">사진: © Nguoivietbao / Wikimedia Commons / CC BY-SA 4.0</p></li>
         </ol>
+        </details>
       </div>
     </section>
   </main>
