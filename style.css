@@ -866,6 +866,24 @@ body.menu-open { overflow: hidden; }
   .rs-legend { flex-direction: row; justify-content: space-between; }
 }
 
+/* ---------- phones: photo on top, text below (no text over the faces) ---------- */
+@media (max-width: 899px) {
+  .hero { --photo-h: 58svh; display: block; min-height: 0; padding: 0 0 40px; }
+  .hero-photo { position: relative; inset: auto; height: var(--photo-h); min-height: 340px; }
+  .hero-slide { object-position: 50% 28%; }
+  .hero-slide:nth-of-type(3) { object-position: 28% 50%; }
+  .hero::after {
+    inset: 0 0 auto 0; height: calc(var(--photo-h) + 2px); min-height: 342px;
+    background: linear-gradient(180deg, rgba(27, 19, 16, .55) 0, rgba(27, 19, 16, 0) 18%, rgba(27, 19, 16, 0) 62%, #1B1310 100%);
+  }
+  .hero-inner { margin-top: -56px; }
+  .hero-title { margin-top: 12px; }
+  .hero-rings { top: calc(var(--photo-h) - 150px); }
+  .hero-credit { top: calc(var(--nav-h) + 8px); bottom: auto; right: 10px; padding: 2px 8px; border-radius: 6px; font-size: .6rem; color: rgba(246, 239, 226, .85); background: rgba(27, 19, 16, .55); }
+  .hero-rings { opacity: .3; }
+  .hero:has(.hero-photo img[hidden]) { padding-top: 0; }
+}
+
 /* ---------- motion / print ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
