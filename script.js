@@ -77,6 +77,8 @@
       idx = n;
       slides[idx].classList.add('is-active');
       slides[idx].removeAttribute('aria-hidden');
+      var dots = document.querySelectorAll('#hero-dots span');
+      Array.prototype.forEach.call(dots, function (d, i) { d.classList.toggle('is-on', i === idx); });
       if (credit) {
         credit.classList.add('is-fading');
         setTimeout(function () {
@@ -113,12 +115,33 @@
 
   if (srcDetails && /^#src-/.test(location.hash)) srcDetails.open = true;
 
-  /* ---------- section watermark numbers ---------- */
-  Array.prototype.forEach.call(document.querySelectorAll('.section-head'), function (h) {
-    var num = h.querySelector('.section-num');
-    var m = num && num.textContent.match(/^\s*(\d{2})/);
-    if (m) h.setAttribute('data-n', m[1]);
-  });
+  /* ---------- table-of-contents sheet (phones / tablets) ---------- */
+  (function () {
+    var btn = document.getElementById('menu-btn');
+    var sheet = document.getElementById('menu-sheet');
+    var close = document.getElementById('menu-close');
+    if (!btn || !sheet) return;
+    function open() {
+      sheet.hidden = false;
+      document.body.classList.add('menu-open');
+      btn.setAttribute('aria-expanded', 'true');
+      var cur = sheet.querySelector('a.is-active') || sheet.querySelector('a');
+      if (cur) cur.focus({ preventScroll: true });
+    }
+    function shut(restore) {
+      if (sheet.hidden) return;
+      sheet.hidden = true;
+      document.body.classList.remove('menu-open');
+      btn.setAttribute('aria-expanded', 'false');
+      if (restore) btn.focus({ preventScroll: true });
+    }
+    btn.addEventListener('click', open);
+    close.addEventListener('click', function () { shut(true); });
+    sheet.addEventListener('keydown', function (e) { if (e.key === 'Escape') shut(true); });
+    // a link inside the sheet: close first, then the global anchor handler scrolls
+    sheet.addEventListener('click', function (e) { if (e.target.closest('a')) shut(false); }, true);
+    window.addEventListener('resize', function () { if (window.innerWidth >= 900) shut(false); });
+  })();
 
   /* ---------- costume tabs (phones / tablets) ---------- */
   (function () {
@@ -199,7 +222,16 @@
 
   /* ---------- active nav link ---------- */
   var sections = navLinks.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
+  var chapterEl = document.getElementById('chapter');
+  var menuLinks = Array.prototype.slice.call(document.querySelectorAll('.menu-list a'));
+  function setChapter(id) {
+    var a = id ? document.querySelector('.menu-list a[href="#' + id + '"] span') : null;
+    var n = a && /^\d\d$/.test(a.textContent) ? a.textContent : (id === 'sources' ? '10' : '00');
+    if (chapterEl) chapterEl.firstChild.textContent = n;
+    menuLinks.forEach(function (l) { l.classList.toggle('is-active', l.getAttribute('href') === '#' + id); });
+  }
   function setActive(id) {
+    setChapter(id);
     navLinks.forEach(function (a) {
       var on = a.getAttribute('href') === '#' + id;
       a.classList.toggle('is-active', on);
@@ -222,6 +254,7 @@
       if (current) setActive(current);
       else {
         navLinks.forEach(function (a) { a.classList.remove('is-active'); a.removeAttribute('aria-current'); });
+        if (window.pageYOffset < window.innerHeight) setChapter(null);
         if (window.pageYOffset < window.innerHeight) navList.scrollTo({ left: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
       }
     }, { rootMargin: '-45% 0px -50% 0px' });
@@ -398,7 +431,10 @@
     var html =
       '<div class="quiz-top"><span class="quiz-count">문제 <b>' + (qi + 1) + '</b> / ' + QUIZ.length + '</span>' +
       '<span class="quiz-score">점수 ' + score + '</span></div>' +
-      '<div class="quiz-bar"><span style="transform:scaleX(' + (qi / QUIZ.length) + ')"></span></div>' +
+      '<div class="quiz-segs" aria-hidden="true">' + QUIZ.map(function (_, k) {
+        return '<i class="' + (k < qi ? 'done' : k === qi ? 'now' : '') + '"></i>';
+      }).join('') + '</div>' +
+      '<span class="quiz-qno" aria-hidden="true">Q' + (qi + 1) + '</span>' +
       '<h3 class="quiz-q" tabindex="-1">' + esc(item.q) + '</h3>' +
       '<div class="quiz-opts' + (item.ox ? ' is-ox' : '') + '">';
     item.opts.forEach(function (o, i) {
