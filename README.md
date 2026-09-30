@@ -37,3 +37,12 @@ Khi chạy trên `*.github.io`, QR tự mã hóa đúng URL đang mở. Khi xem 
 ```bash
 python3 -m http.server 8000   # mở http://localhost:8000
 ```
+
+## Trang thứ hai: Phố cổ Hội An (`hoi-an/`)
+
+Địa chỉ: `https://tuong06.github.io/quan-ho/hoi-an/` — cùng cấu trúc HTML/CSS/JS thuần, tự chứa trong thư mục `hoi-an/` (có bản Leaflet và qrcode-generator riêng trong `hoi-an/assets/vendor/`), nên có thể tách sang repo khác mà không phải sửa.
+
+- Nội dung tiếng Hàn + phiên âm; số liệu kiểm chứng từ UNESCO, Bộ VHTTDL, Trung tâm Bảo tồn Di sản Hội An, báo chính phủ (danh sách nguồn ở cuối trang).
+- Hình minh họa SVG tự vẽ (không dùng ảnh chụp).
+- Tương tác: đổi chế độ "Đêm phố cổ" cho cả trang, dòng thời gian dạng thanh trượt, sơ đồ nhà ống có điểm chạm, xưởng làm lồng đèn + thả hoa đăng, thanh trượt mực nước lũ, đếm ngược tới đêm 14 âm lịch (thuật toán âm lịch Việt Nam, UTC+7), quiz, bản đồ.
+- Ngày thuyết trình ở phần bìa đang để trống (`2026. ○○. ○○` trong `hoi-an/index.html`).

@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Phố cổ Hội An · 호이안 고대 도시</title>
+  <meta name="description" content="유네스코 세계문화유산(1999) 호이안 고대 도시 발표 요약 — 광운대학교 대학한국어(01), 발표자 레깟뜨엉.">
+  <meta name="theme-color" content="#121A24">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Phố cổ Hội An · 시간이 머무는 항구">
+  <meta property="og:description" content="유네스코 세계문화유산 · 1999 — 등불과 노란 벽의 도시, 베트남 중부의 무역항 호이안을 소개합니다.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121A24'/%3E%3Cline x1='32' y1='6' x2='32' y2='14' stroke='%23F2C265' stroke-width='3'/%3E%3Crect x='24' y='13' width='16' height='5' rx='2' fill='%23F2C265'/%3E%3Cellipse cx='32' cy='33' rx='15' ry='16' fill='%23C9382E'/%3E%3Crect x='25' y='48' width='14' height='4' rx='2' fill='%23F2C265'/%3E%3Cline x1='32' y1='52' x2='32' y2='60' stroke='%23C9382E' stroke-width='3'/%3E%3C/svg%3E">
+
+  <script>
+    document.documentElement.classList.add('js');
+    try { if (localStorage.getItem('hoian-night') === '1') document.documentElement.classList.add('night'); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Latin/Vietnamese glyphs: Be Vietnam Pro · Noto Serif / Hangul: Noto Sans KR · Noto Serif KR -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif:ital,wght@0,600;0,700;1,600;1,700&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#intro">본문 바로가기</a>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="site-header" id="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="맨 위로">
+        <svg viewBox="0 0 24 32" width="18" height="24" aria-hidden="true"><line x1="12" y1="0" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><rect x="7" y="4" width="10" height="3" rx="1" fill="#F2C265"/><ellipse cx="12" cy="16" rx="9" ry="10" fill="#C9382E"/><rect x="8" y="25" width="8" height="2.5" rx="1" fill="#F2C265"/><line x1="12" y1="27" x2="12" y2="32" stroke="#C9382E" stroke-width="1.8"/></svg>
+        <span class="brand-text" lang="vi">Hội An</span>
+      </a>
+      <nav class="nav" aria-label="섹션 이동">
+        <ol class="nav-list" id="nav-list">
+          <li><a href="#intro">소개</a></li>
+          <li><a href="#place">지도</a></li>
+          <li><a href="#history">역사</a></li>
+          <li><a href="#house">건축</a></li>
+          <li><a href="#spots">명소</a></li>
+          <li><a href="#lantern">등불</a></li>
+          <li><a href="#food">음식</a></li>
+          <li><a href="#conserve">보전</a></li>
+          <li><a href="#compare">비교</a></li>
+          <li><a href="#quiz">퀴즈</a></li>
+          <li><a href="#closing">맺음말</a></li>
+          <li><a href="#sources">출처</a></li>
+        </ol>
+      </nav>
+      <div class="nav-tools">
+        <span class="chapter" id="chapter" aria-hidden="true"><b>00</b> / 11</span>
+        <button type="button" class="icon-btn night-btn" data-night-toggle aria-pressed="false" aria-label="등불 모드 켜기">
+          <svg class="ico-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+          <svg class="ico-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        </button>
+        <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-label="목차 열기" aria-expanded="false" aria-controls="menu-sheet">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="8" x2="19" y2="8"/><line x1="5" y1="12" x2="19" y2="12"/><line x1="9" y1="16" x2="19" y2="16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-sheet" id="menu-sheet" role="dialog" aria-modal="true" aria-label="목차" hidden>
+    <div class="menu-head">
+      <span class="menu-title">목차</span>
+      <button type="button" class="icon-btn menu-close" id="menu-close" aria-label="목차 닫기">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ol class="menu-list">
+      <li><a href="#intro"><span>01</span>소개와 등재</a></li>
+      <li><a href="#place"><span>02</span>투본강의 항구 도시</a></li>
+      <li><a href="#history"><span>03</span>무역항의 번영과 쇠퇴</a></li>
+      <li><a href="#house"><span>04</span>좁고 깊은 집</a></li>
+      <li><a href="#spots"><span>05</span>대표 명소</a></li>
+      <li><a href="#lantern"><span>06</span>등불이 밝히는 밤</a></li>
+      <li><a href="#food"><span>07</span>호이안의 맛</a></li>
+      <li><a href="#conserve"><span>08</span>보전과 과제</a></li>
+      <li><a href="#compare"><span>09</span>한국과의 비교</a></li>
+      <li><a href="#quiz"><span>10</span>퀴즈</a></li>
+      <li><a href="#closing"><span>11</span>맺음말</a></li>
+      <li><a href="#sources"><span>·</span>출처</a></li>
+    </ol>
+  </div>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMax slice" focusable="false">
+          <defs>
+            <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0B1320"/><stop offset=".5" stop-color="#1A2436"/><stop offset=".8" stop-color="#3B2E3A"/><stop offset="1" stop-color="#6A4133"/>
+            </linearGradient>
+            <radialGradient id="g-moon"><stop offset="0" stop-color="#F6E6BE" stop-opacity=".5"/><stop offset="1" stop-color="#F6E6BE" stop-opacity="0"/></radialGradient>
+            <radialGradient id="g-lamp"><stop offset="0" stop-color="#FFBE5A" stop-opacity=".8"/><stop offset=".45" stop-color="#FFA23C" stop-opacity=".25"/><stop offset="1" stop-color="#FF9632" stop-opacity="0"/></radialGradient>
+            <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A84E"/><stop offset="1" stop-color="#9A7132"/></linearGradient>
+            <linearGradient id="g-wall2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E3BE6A"/><stop offset="1" stop-color="#A5803F"/></linearGradient>
+            <linearGradient id="g-door" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC870"/><stop offset="1" stop-color="#DC761E"/></linearGradient>
+            <linearGradient id="g-river" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12303A"/><stop offset="1" stop-color="#07141A"/></linearGradient>
+            <linearGradient id="g-refl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB450" stop-opacity=".5"/><stop offset="1" stop-color="#FFB450" stop-opacity="0"/></linearGradient>
+            <pattern id="p-tiles" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="#6B3325"/><rect width="3" height="9" fill="#4E2419"/></pattern>
+            <pattern id="p-rail" width="8" height="14" patternUnits="userSpaceOnUse"><rect width="2" height="14" fill="#2A1A12"/></pattern>
+            <symbol id="lt" viewBox="-16 0 32 56">
+              <line x1="0" y1="0" x2="0" y2="9" stroke="#1C120D" stroke-width="1.5"/>
+              <rect x="-6" y="8" width="12" height="4" rx="1.5" fill="#2A1A12"/>
+              <ellipse cx="0" cy="26" rx="12" ry="14" fill="currentColor"/>
+              <ellipse cx="0" cy="26" rx="6" ry="14" fill="none" stroke="#000" stroke-opacity=".18"/>
+              <ellipse cx="-3.5" cy="21" rx="3.5" ry="6" fill="#fff" fill-opacity=".2"/>
+              <rect x="-5" y="39" width="10" height="3" rx="1" fill="#2A1A12"/>
+              <line x1="0" y1="42" x2="0" y2="54" stroke="currentColor" stroke-width="2"/>
+            </symbol>
+            <symbol id="hd" viewBox="-24 -30 48 40">
+              <ellipse cx="0" cy="-8" rx="20" ry="16" fill="url(#g-lamp)"/>
+              <path d="M-16 0 L16 0 L11 7 L-11 7 Z" fill="#E6D2A0"/>
+              <path d="M-15 0 Q-11 -12 -4 0 Z" fill="#E07A8F"/>
+              <path d="M-6 0 Q0 -15 6 0 Z" fill="#F0A1B2"/>
+              <path d="M4 0 Q11 -12 15 0 Z" fill="#E07A8F"/>
+              <path d="M0 -9 Q3.5 -14 0 -21 Q-3.5 -14 0 -9 Z" fill="#FFD27A"/>
+            </symbol>
+          </defs>
+
+          <rect width="1200" height="700" fill="url(#g-sky)"/>
+          <g fill="#F6E6BE">
+            <circle class="tw" cx="90" cy="70" r="1.4"/><circle cx="210" cy="140" r="1"/><circle class="tw" cx="330" cy="60" r="1.6"/>
+            <circle cx="470" cy="120" r="1.1"/><circle class="tw" cx="600" cy="48" r="1.3"/><circle cx="700" cy="150" r="1"/>
+            <circle cx="1020" cy="80" r="1.5"/><circle class="tw" cx="1120" cy="160" r="1.1"/><circle cx="760" cy="96" r="1.2"/>
+            <circle class="tw" cx="1170" cy="40" r="1.3"/><circle cx="40" cy="190" r="1"/><circle cx="540" cy="200" r="1.1"/>
+          </g>
+          <circle cx="760" cy="262" r="96" fill="url(#g-moon)"/>
+          <circle cx="760" cy="262" r="26" fill="#F6E6BE"/>
+          <circle cx="752" cy="255" r="4.5" fill="#E7D3A5" opacity=".6"/><circle cx="769" cy="270" r="3.5" fill="#E7D3A5" opacity=".5"/>
+
+          <path d="M0 392 L60 374 L120 382 L180 362 L260 372 L330 352 L420 364 L520 350 L640 362 L760 348 L860 360 L960 346 L1060 358 L1140 344 L1200 352 L1200 470 L0 470 Z" fill="#151D2B"/>
+          <circle cx="1100" cy="330" r="34" fill="#121A26"/><circle cx="1140" cy="344" r="26" fill="#121A26"/><circle cx="120" cy="352" r="30" fill="#121A26"/>
+
+          <!-- left houses -->
+          <path d="M-10 318 L20 292 L160 292 L182 318 Z" fill="url(#p-tiles)"/>
+          <rect x="0" y="318" width="170" height="92" fill="url(#g-wall)"/>
+          <rect x="22" y="340" width="36" height="44" fill="#FFB95E"/><rect x="16" y="340" width="6" height="44" fill="#3F6B5B"/><rect x="58" y="340" width="6" height="44" fill="#3F6B5B"/>
+          <rect x="112" y="340" width="36" height="44" fill="#FFB95E"/><rect x="106" y="340" width="6" height="44" fill="#3F6B5B"/><rect x="148" y="340" width="6" height="44" fill="#3F6B5B"/>
+          <rect x="0" y="392" width="170" height="14" fill="url(#p-rail)"/><rect x="0" y="404" width="170" height="8" fill="#3A241A"/>
+          <path d="M-10 432 L10 414 L160 414 L180 432 Z" fill="url(#p-tiles)"/>
+          <rect x="0" y="432" width="170" height="128" fill="url(#g-wall)"/>
+          <rect x="48" y="468" width="74" height="92" fill="url(#g-door)"/><rect x="48" y="468" width="74" height="92" fill="none" stroke="#3A241A" stroke-width="4"/>
+          <circle cx="72" cy="456" r="5" fill="#2A1A12"/><circle cx="72" cy="456" r="2" fill="#E3BE6A"/><circle cx="98" cy="456" r="5" fill="#2A1A12"/><circle cx="98" cy="456" r="2" fill="#E3BE6A"/>
+
+          <path d="M160 380 L196 342 L318 342 L352 380 Z" fill="url(#p-tiles)"/>
+          <rect x="170" y="380" width="170" height="180" fill="url(#g-wall2)"/>
+          <rect x="214" y="396" width="82" height="20" fill="#2A1A12"/><rect x="226" y="402" width="10" height="8" fill="#C89A45"/><rect x="244" y="402" width="10" height="8" fill="#C89A45"/><rect x="262" y="402" width="10" height="8" fill="#C89A45"/><rect x="280" y="402" width="6" height="8" fill="#C89A45"/>
+          <rect x="196" y="440" width="118" height="120" fill="url(#g-door)"/><rect x="196" y="440" width="118" height="120" fill="none" stroke="#3A241A" stroke-width="4"/>
+          <circle cx="240" cy="428" r="5" fill="#2A1A12"/><circle cx="240" cy="428" r="2" fill="#E3BE6A"/><circle cx="270" cy="428" r="5" fill="#2A1A12"/><circle cx="270" cy="428" r="2" fill="#E3BE6A"/>
+
+          <!-- right houses -->
+          <path d="M650 330 L684 300 L816 300 L850 330 Z" fill="url(#p-tiles)"/>
+          <rect x="660" y="330" width="180" height="230" fill="url(#g-wall2)"/>
+          <rect x="686" y="352" width="28" height="48" fill="#FFB95E"/><rect x="680" y="352" width="6" height="48" fill="#3F6B5B"/><rect x="714" y="352" width="6" height="48" fill="#3F6B5B"/>
+          <rect x="736" y="352" width="28" height="48" fill="#FFB95E"/><rect x="730" y="352" width="6" height="48" fill="#3F6B5B"/><rect x="764" y="352" width="6" height="48" fill="#3F6B5B"/>
+          <rect x="786" y="352" width="28" height="48" fill="#FFB95E"/><rect x="780" y="352" width="6" height="48" fill="#3F6B5B"/><rect x="814" y="352" width="6" height="48" fill="#3F6B5B"/>
+          <rect x="660" y="410" width="180" height="14" fill="url(#p-rail)"/><rect x="660" y="422" width="180" height="8" fill="#3A241A"/>
+          <rect x="690" y="470" width="52" height="90" fill="url(#g-door)"/><rect x="758" y="470" width="52" height="90" fill="url(#g-door)"/>
+          <circle cx="706" cy="458" r="4.5" fill="#2A1A12"/><circle cx="726" cy="458" r="4.5" fill="#2A1A12"/><circle cx="774" cy="458" r="4.5" fill="#2A1A12"/><circle cx="794" cy="458" r="4.5" fill="#2A1A12"/>
+
+          <path d="M830 386 L866 350 L984 350 L1020 386 Z" fill="url(#p-tiles)"/>
+          <rect x="840" y="386" width="170" height="174" fill="url(#g-wall)"/>
+          <rect x="866" y="440" width="118" height="120" fill="url(#g-door)"/><rect x="866" y="440" width="118" height="120" fill="none" stroke="#3A241A" stroke-width="4"/>
+          <circle cx="910" cy="426" r="5" fill="#2A1A12"/><circle cx="940" cy="426" r="5" fill="#2A1A12"/>
+
+          <path d="M1000 318 L1034 288 L1210 288 L1220 318 Z" fill="url(#p-tiles)"/>
+          <rect x="1010" y="318" width="190" height="242" fill="url(#g-wall2)"/>
+          <rect x="1036" y="340" width="32" height="46" fill="#FFB95E"/><rect x="1100" y="340" width="32" height="46" fill="#FFB95E"/><rect x="1164" y="340" width="32" height="46" fill="#FFB95E"/>
+          <rect x="1010" y="398" width="190" height="14" fill="url(#p-rail)"/><rect x="1010" y="410" width="190" height="8" fill="#3A241A"/>
+          <rect x="1060" y="466" width="80" height="94" fill="url(#g-door)"/><rect x="1060" y="466" width="80" height="94" fill="none" stroke="#3A241A" stroke-width="4"/>
+
+          <!-- quay, river -->
+          <rect x="0" y="560" width="1200" height="26" fill="#2A211C"/>
+          <rect x="0" y="560" width="1200" height="2" fill="#FFBE5A" opacity=".25"/>
+          <ellipse cx="85" cy="573" rx="70" ry="8" fill="#FFAA46" opacity=".22"/><ellipse cx="255" cy="573" rx="80" ry="8" fill="#FFAA46" opacity=".22"/>
+          <ellipse cx="750" cy="573" rx="80" ry="8" fill="#FFAA46" opacity=".2"/><ellipse cx="925" cy="573" rx="80" ry="8" fill="#FFAA46" opacity=".22"/><ellipse cx="1100" cy="573" rx="60" ry="8" fill="#FFAA46" opacity=".2"/>
+          <rect x="0" y="586" width="1200" height="114" fill="url(#g-river)"/>
+          <rect x="360" y="520" width="280" height="66" fill="url(#g-river)"/>
+
+          <!-- Chùa Cầu (covered bridge) -->
+          <path d="M340 586 L356 488 L644 488 L660 586 Z" fill="#4A3A33"/>
+          <path d="M394 586 Q500 470 606 586 Z" fill="#0E2129"/>
+          <rect x="364" y="430" width="272" height="58" fill="#8E6232"/>
+          <rect x="382" y="444" width="34" height="32" fill="url(#g-door)"/><rect x="432" y="444" width="34" height="32" fill="url(#g-door)"/><rect x="483" y="444" width="34" height="32" fill="url(#g-door)"/><rect x="534" y="444" width="34" height="32" fill="url(#g-door)"/><rect x="584" y="444" width="34" height="32" fill="url(#g-door)"/>
+          <rect x="360" y="484" width="280" height="7" fill="#2A1A12"/>
+          <path d="M344 432 L380 398 L620 398 L656 432 Z" fill="url(#p-tiles)"/>
+          <path d="M344 432 Q332 431 326 419" fill="none" stroke="#6B3325" stroke-width="5" stroke-linecap="round"/>
+          <path d="M656 432 Q668 431 674 419" fill="none" stroke="#6B3325" stroke-width="5" stroke-linecap="round"/>
+          <path d="M450 400 L474 370 L526 370 L550 400 Z" fill="url(#p-tiles)"/>
+          <circle cx="500" cy="365" r="5" fill="#C89A45"/>
+
+          <!-- reflections -->
+          <g class="shimmer">
+            <rect x="60" y="590" width="50" height="100" fill="url(#g-refl)"/><rect x="220" y="590" width="70" height="100" fill="url(#g-refl)"/>
+            <rect x="480" y="590" width="40" height="96" fill="url(#g-refl)" opacity=".7"/>
+            <rect x="700" y="590" width="40" height="100" fill="url(#g-refl)"/><rect x="890" y="590" width="70" height="100" fill="url(#g-refl)"/><rect x="1080" y="590" width="40" height="100" fill="url(#g-refl)"/>
+          </g>
+          <ellipse cx="770" cy="612" rx="40" ry="4" fill="#F6E6BE" opacity=".3"/><ellipse cx="770" cy="628" rx="26" ry="3" fill="#F6E6BE" opacity=".18"/>
+          <g stroke="#FFFFFF" stroke-opacity=".08" stroke-width="2" stroke-linecap="round">
+            <line x1="120" y1="640" x2="170" y2="640"/><line x1="320" y1="660" x2="390" y2="660"/><line x1="560" y1="646" x2="610" y2="646"/><line x1="760" y1="672" x2="830" y2="672"/><line x1="1000" y1="650" x2="1050" y2="650"/>
+          </g>
+
+          <!-- boat -->
+          <g class="bob">
+            <path d="M880 652 Q940 676 1000 652 L990 644 L890 644 Z" fill="#1B1411"/>
+            <path d="M912 644 Q940 622 968 644 Z" fill="#3A2A20"/>
+            <circle cx="940" cy="632" r="16" fill="url(#g-lamp)"/>
+            <use href="#lt" x="931" y="612" width="18" height="32" color="#D1382C"/>
+          </g>
+
+          <!-- lantern strings -->
+          <g fill="none" stroke="#1C120D" stroke-width="1.3">
+            <path d="M0 300 Q85 334 170 306"/><path d="M660 304 Q750 338 840 306"/><path d="M1010 292 Q1105 328 1200 298"/><path d="M372 400 Q500 426 628 400"/>
+          </g>
+          <g>
+            <circle cx="30" cy="344" r="24" fill="url(#g-lamp)"/><circle cx="64" cy="350" r="24" fill="url(#g-lamp)"/><circle cx="100" cy="352" r="24" fill="url(#g-lamp)"/><circle cx="136" cy="346" r="24" fill="url(#g-lamp)"/>
+            <circle cx="692" cy="346" r="24" fill="url(#g-lamp)"/><circle cx="728" cy="352" r="24" fill="url(#g-lamp)"/><circle cx="764" cy="354" r="24" fill="url(#g-lamp)"/><circle cx="800" cy="350" r="24" fill="url(#g-lamp)"/><circle cx="830" cy="342" r="24" fill="url(#g-lamp)"/>
+            <circle cx="1040" cy="334" r="24" fill="url(#g-lamp)"/><circle cx="1076" cy="342" r="24" fill="url(#g-lamp)"/><circle cx="1112" cy="344" r="24" fill="url(#g-lamp)"/><circle cx="1148" cy="340" r="24" fill="url(#g-lamp)"/><circle cx="1182" cy="330" r="24" fill="url(#g-lamp)"/>
+            <circle cx="420" cy="436" r="24" fill="url(#g-lamp)"/><circle cx="470" cy="442" r="24" fill="url(#g-lamp)"/><circle cx="530" cy="442" r="24" fill="url(#g-lamp)"/><circle cx="580" cy="436" r="24" fill="url(#g-lamp)"/>
+            <circle cx="222" cy="470" r="34" fill="url(#g-lamp)"/><circle cx="288" cy="470" r="34" fill="url(#g-lamp)"/><circle cx="892" cy="470" r="34" fill="url(#g-lamp)"/><circle cx="958" cy="470" r="34" fill="url(#g-lamp)"/>
+          </g>
+          <g class="lts">
+            <use href="#lt" x="14" y="316" width="32" height="56" color="#D1382C" class="sw" style="animation-delay:-.4s"/>
+            <use href="#lt" x="48" y="322" width="32" height="56" color="#F2B233" class="sw" style="animation-delay:-1.9s"/>
+            <use href="#lt" x="84" y="324" width="32" height="56" color="#8E4BA8" class="sw" style="animation-delay:-3.1s"/>
+            <use href="#lt" x="120" y="318" width="32" height="56" color="#E8762B" class="sw" style="animation-delay:-1.1s"/>
+            <use href="#lt" x="676" y="318" width="32" height="56" color="#2F8F8A" class="sw" style="animation-delay:-2.4s"/>
+            <use href="#lt" x="712" y="324" width="32" height="56" color="#D1382C" class="sw" style="animation-delay:-.8s"/>
+            <use href="#lt" x="748" y="326" width="32" height="56" color="#F2B233" class="sw" style="animation-delay:-3.6s"/>
+            <use href="#lt" x="784" y="322" width="32" height="56" color="#D9486E" class="sw" style="animation-delay:-1.5s"/>
+            <use href="#lt" x="814" y="314" width="32" height="56" color="#E8762B" class="sw" style="animation-delay:-2.8s"/>
+            <use href="#lt" x="1024" y="306" width="32" height="56" color="#F2B233" class="sw" style="animation-delay:-.2s"/>
+            <use href="#lt" x="1060" y="314" width="32" height="56" color="#D1382C" class="sw" style="animation-delay:-2.1s"/>
+            <use href="#lt" x="1096" y="316" width="32" height="56" color="#2F8F8A" class="sw" style="animation-delay:-3.3s"/>
+            <use href="#lt" x="1132" y="312" width="32" height="56" color="#8E4BA8" class="sw" style="animation-delay:-1.3s"/>
+            <use href="#lt" x="1166" y="302" width="32" height="56" color="#D1382C" class="sw" style="animation-delay:-2.6s"/>
+            <use href="#lt" x="404" y="408" width="32" height="56" color="#D1382C" class="sw" style="animation-delay:-1.7s"/>
+            <use href="#lt" x="454" y="414" width="32" height="56" color="#F2B233" class="sw" style="animation-delay:-.6s"/>
+            <use href="#lt" x="514" y="414" width="32" height="56" color="#D1382C" class="sw" style="animation-delay:-2.9s"/>
+            <use href="#lt" x="564" y="408" width="32" height="56" color="#F2B233" class="sw" style="animation-delay:-1.2s"/>
+            <use href="#lt" x="200" y="432" width="44" height="77" color="#D1382C" class="sw" style="animation-delay:-2.2s"/>
+            <use href="#lt" x="266" y="432" width="44" height="77" color="#F2B233" class="sw" style="animation-delay:-.9s"/>
+            <use href="#lt" x="870" y="432" width="44" height="77" color="#E8762B" class="sw" style="animation-delay:-3.4s"/>
+            <use href="#lt" x="936" y="432" width="44" height="77" color="#D1382C" class="sw" style="animation-delay:-1.6s"/>
+          </g>
+
+          <!-- floating flower lanterns (hoa đăng) -->
+          <g class="drift" style="--dur:46s;--delay:-4s"><g class="bob"><use href="#hd" x="0" y="596" width="48" height="40"/></g></g>
+          <g class="drift" style="--dur:58s;--delay:-22s"><g class="bob"><use href="#hd" x="0" y="620" width="40" height="34"/></g></g>
+          <g class="drift" style="--dur:52s;--delay:-37s"><g class="bob"><use href="#hd" x="0" y="648" width="52" height="44"/></g></g>
+          <g class="drift" style="--dur:64s;--delay:-12s"><g class="bob"><use href="#hd" x="0" y="606" width="36" height="30"/></g></g>
+          <g class="drift" style="--dur:49s;--delay:-30s"><g class="bob"><use href="#hd" x="0" y="662" width="44" height="37"/></g></g>
+        </svg>
+      </div>
+
+      <div class="hero-inner">
+        <p class="eyebrow reveal">UNESCO 세계문화유산 · 1999</p>
+        <h1 class="hero-title reveal" id="hero-title">
+          <span class="hero-title-pre" lang="vi">Phố cổ</span>
+          <span lang="vi">Hội An</span>
+        </h1>
+        <p class="hero-sub reveal">베트남 중부 투본강 하구, 15~19세기 무역항의 거리가 그대로 남은 ‘시간이 멈춘 도시’</p>
+        <p class="hero-tag reveal"><span class="pill">세계유산</span>
+          <button type="button" class="say-btn" data-say="Phố cổ Hội An" aria-label="Phố cổ Hội An 발음 듣기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/></svg><span>포 꼬 호이안 · 발음 듣기</span></button></p>
+        <blockquote class="hero-quote reveal">
+          <span class="q-mark" aria-hidden="true">“</span>
+          <span>베트남 중부의 작은 항구 도시, 400년 전의 시간이 그대로 남아 있는 호이안으로 함께 떠나 보겠습니다.</span>
+        </blockquote>
+        <div class="hero-presenter reveal">
+          <p class="hp-row"><span class="hp-name">레깟뜨엉 <span lang="vi">Lê Cát Tường</span></span><span class="hp-date">2026. ○○. ○○</span></p>
+          <p class="hp-meta">발표자 · 광운대학교 정보융합학부 · 대학한국어(01)</p>
+        </div>
+        <div class="hero-foot reveal">
+          <span class="hero-caption">그림: 음력 14일 밤의 내원교와 등불 거리 (이 페이지를 위해 새로 그린 일러스트)</span>
+          <a class="hero-cta" href="#intro">
+            <span>스크롤하여 보기</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5v14m0 0-6-6m6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 01 소개와 등재 ============ -->
+    <section class="section" id="intro" aria-labelledby="intro-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num"><span class="sn-badge">01</span><span class="sn-label">소개와 등재</span></p>
+          <h2 id="intro-title">유네스코 세계문화유산 등재</h2>
+          <p class="lead">1999년 12월 4일, 모로코 마라케시에서 열린 제23차 세계유산위원회에서 <b lang="vi">Hội An</b> 고대 도시가 세계문화유산으로 등재되었다. 같은 날 참파 왕국의 성지 미선(<span lang="vi">Mỹ Sơn</span>) 유적도 함께 이름을 올렸다.</p>
+        </header>
+
+        <div class="intro-grid">
+          <div class="seal-card reveal">
+            <p class="seal-kicker">세계유산 등재</p>
+            <p class="seal-year"><time datetime="1999-12-04">1999</time></p>
+            <p class="seal-date">12월 4일 · 마라케시 제23차 세계유산위원회</p>
+            <p class="seal-code"><span>등재 기준</span><code>(ii)</code><code>(v)</code><span>· 목록 No. 948</span></p>
+            <svg class="seal-lanterns" viewBox="0 0 120 150" aria-hidden="true"><g fill="none" stroke="#FFE3B0" stroke-opacity=".5"><path d="M0 18 Q60 44 120 14"/></g><g fill="#FFE3B0" fill-opacity=".35"><ellipse cx="30" cy="54" rx="13" ry="15"/><ellipse cx="66" cy="62" rx="13" ry="15"/><ellipse cx="100" cy="50" rx="13" ry="15"/></g></svg>
+          </div>
+          <div class="name-card reveal">
+            <p class="name-kicker">이름의 뜻</p>
+            <p class="name-hanja" lang="zh-Hant"><span>會</span><span>安</span></p>
+            <p class="name-reading"><b>모일 회 · 편안할 안</b> — ‘평화롭게 모이는 곳’</p>
+            <p class="name-note">유럽 상인들은 이곳을 <b>페이포(Faifo)</b>라고 불렀다.</p>
+          </div>
+        </div>
+
+        <dl class="facts reveal">
+          <div><dt>공식 명칭</dt><dd><span lang="en">“Hoi An Ancient Town”</span></dd></div>
+          <div><dt>기준 (ii)</dt><dd>국제 무역항에서 여러 문화가 오랜 시간 섞여 온 모습이 건축과 거리에 뚜렷이 남아 있다.</dd></div>
+          <div><dt>기준 (v)</dt><dd>15~19세기 아시아 전통 무역항의 모습이 예외적으로 잘 보존된 사례다.</dd></div>
+          <div><dt>보호 범위</dt><dd>보호 구역 <b>30ha</b> · 완충 구역 <b>280ha</b></dd></div>
+          <div><dt>건축물</dt><dd>벽돌·목재 벽을 가진 목조 건축물 <b>1,107채</b> — 사원, 가문 사당, 주택, 재래시장과 나루터</dd></div>
+        </dl>
+
+        <aside class="pron reveal" aria-label="발음 도움말">
+          <span class="pron-label">발음 도움말</span>
+          <span><b lang="vi">Hội An</b> 호이안</span>
+          <span><b lang="vi">Phố cổ</b> 포 꼬</span>
+          <span><b lang="vi">Mỹ Sơn</b> 미 선</span>
+        </aside>
+        <p class="src-inline">출처: UNESCO 세계유산센터, 베트남 문화체육관광부 → <a href="#src-intro">출처 목록</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 02 지도 ============ -->
+    <section class="section section-alt" id="place" aria-labelledby="place-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num"><span class="sn-badge">02</span><span class="sn-label">위치</span></p>
+          <h2 id="place-title">투본강이 바다와 만나는 곳</h2>
+          <p class="lead">호이안은 투본(<span lang="vi">Thu Bồn</span>)강 하류, 바다와 가까운 강가에 자리한 항구 도시다. 다낭 시내에서 남쪽으로 약 30km 떨어져 있다.</p>
+        </header>
+
+        <div class="map-wrap reveal">
+          <div class="map-toolbar" role="group" aria-label="지도 필터">
+            <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">전체</button>
+            <button type="button" class="chip" data-filter="town" aria-pressed="false"><i class="dot dot-town"></i>구시가지</button>
+            <button type="button" class="chip" data-filter="near" aria-pressed="false"><i class="dot dot-near"></i>주변 유산</button>
+          </div>
+          <div class="map-grid">
+            <div class="map-frame">
+              <div id="map" role="region" aria-label="호이안과 주변 유산 지도"></div>
+              <button type="button" class="map-unlock" id="map-unlock" hidden>지도 움직이기</button>
+              <noscript><p class="map-fallback">지도를 보려면 JavaScript를 켜 주세요.</p></noscript>
+            </div>
+            <ul class="map-list" id="map-list" aria-label="지도 위 장소 목록"></ul>
+          </div>
+          <p class="map-note">
+            <strong>지도 읽는 법</strong> — 내원교(<span lang="vi">Chùa Cầu</span>)는 정확한 좌표이고, 구시가지 원은 위치를 알려 주는 <em>개략 표시</em>다.
+            2025년 7월 행정구역 개편으로 꽝남(<span lang="vi">Quảng Nam</span>)성이 다낭시에 통합되어, 호이안은 현재 다낭시에 속한다.
+          </p>
+        </div>
+
+        <aside class="pron reveal" aria-label="발음 도움말">
+          <span class="pron-label">발음 도움말</span>
+          <span><b lang="vi">Thu Bồn</b> 투 본</span>
+          <span><b lang="vi">Đà Nẵng</b> 다낭</span>
+          <span><b lang="vi">Quảng Nam</b> 꽝 남</span>
+          <span><b lang="vi">Cù Lao Chàm</b> 꾸 라오 짬</span>
+        </aside>
+        <p class="src-inline">출처: UNESCO 세계유산센터 · 베트남 정부 정책 포털 · 지도 © OpenStreetMap, © CARTO → <a href="#src-place">출처 목록</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 03 역사 ============ -->
+    <section class="section section-dark" id="history" aria-labelledby="history-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num"><span class="sn-badge">03</span><span class="sn-label">역사</span></p>
+          <h2 id="history-title">무역항의 번영과 쇠퇴</h2>
+          <p class="lead">쇠퇴가 오히려 옛 거리를 지켜 준 도시. 슬라이더를 움직여 호이안의 시간을 따라가 보자.</p>
+        </header>
+
+        <div class="era reveal" id="era">
+          <ol class="era-list" id="era-list">
+            <li class="era-step is-on" data-ships="1">
+              <p class="era-when">15세기 이전</p>
+              <h3>참파 왕국의 바닷길</h3>
+              <p>호이안 일대는 베트남인이 남쪽으로 내려오기 전 참파(<span lang="vi">Chăm Pa</span>) 왕국의 땅이었고, 투본강 하구는 바닷길의 기항지였다. 강 상류에는 참파의 성지 미선이 있다.</p>
+            </li>
+            <li class="era-step" data-ships="5">
+              <p class="era-when">16세기 말~17세기</p>
+              <h3>국제 무역항의 전성기</h3>
+              <p>응우옌 영주(<span lang="vi">chúa Nguyễn</span>)가 대외 교역을 열자 일본·중국·유럽 상인들이 모여들었다. 일본인 거리와 중국인 거리가 생겼고, 포르투갈 상인들은 이곳을 ‘페이포(Faifo)’라고 불렀다.</p>
+            </li>
+            <li class="era-step" data-ships="4">
+              <p class="era-when">1593 · 1719</p>
+              <h3>다리 하나에 담긴 교류</h3>
+              <p>내원교(<span lang="vi">Chùa Cầu</span>)는 1593년 일본 상인들이 세웠다고 전해진다. 1719년 응우옌 푹 쭈 영주가 ‘먼 곳에서 온 손님을 맞는 다리’라는 뜻의 래원교(來遠橋)라는 이름을 내렸다.</p>
+            </li>
+            <li class="era-step" data-ships="1">
+              <p class="era-when">18세기 말~19세기</p>
+              <h3>강이 막히고 항구가 떠나다</h3>
+              <p>투본강 하구에 토사가 쌓여 큰 배가 드나들기 어려워졌고, 프랑스는 수심이 깊은 다낭을 지역 항구로 택했다. 상권은 다낭으로 옮겨 갔다.</p>
+            </li>
+            <li class="era-step" data-ships="0">
+              <p class="era-when">20세기</p>
+              <h3>멈춘 시간, 남은 거리</h3>
+              <p>개발의 압력에서 비껴난 덕분에, 옛 건물을 허물고 새로 지을 일이 적었다. 그 결과 무역항 시절의 거리 모습이 거의 그대로 남았다.</p>
+            </li>
+            <li class="era-step" data-ships="2">
+              <p class="era-when">1985 · 1999</p>
+              <h3>유산이 되다</h3>
+              <p>1985년 베트남 국가 문화유적으로 지정되었고, 1999년 12월 4일 유네스코 세계문화유산이 되었다.</p>
+            </li>
+            <li class="era-step" data-ships="3">
+              <p class="era-when">2023 · 2024</p>
+              <h3>오늘의 호이안</h3>
+              <p>2023년 10월 31일 유네스코 창의도시 네트워크(공예·민속예술)에 가입했고, 2024년 8월 3일에는 2년 가까운 복원을 마친 내원교가 다시 문을 열었다.</p>
+            </li>
+          </ol>
+          <div class="era-controls">
+            <button type="button" class="icon-btn era-prev" id="era-prev" aria-label="이전 시기">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <div class="era-range">
+              <input type="range" id="era-range" min="0" max="6" step="1" value="0" aria-label="시기 선택" aria-valuetext="15세기 이전">
+              <p class="era-pos" id="era-pos" aria-hidden="true">1 / 7</p>
+              <div class="era-ticks" aria-hidden="true"><span>참파</span><span>전성기</span><span>내원교</span><span>쇠퇴</span><span>보존</span><span>등재</span><span>오늘</span></div>
+            </div>
+            <button type="button" class="icon-btn era-next" id="era-next" aria-label="다음 시기">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+          <div class="era-port" aria-hidden="true">
+            <svg viewBox="0 0 320 60" preserveAspectRatio="none">
+              <rect x="0" y="38" width="320" height="22" fill="#12303A"/>
+              <g class="ship" data-i="1"><path d="M20 38 Q40 48 60 38 Z" fill="#E3BE6A"/><path d="M38 38 V14 L54 32 Z" fill="#F6E6BE"/></g>
+              <g class="ship" data-i="2"><path d="M80 40 Q102 50 124 40 Z" fill="#E3BE6A"/><path d="M100 40 V12 L118 34 Z" fill="#F6E6BE"/><path d="M92 40 V22 L82 36 Z" fill="#F6E6BE"/></g>
+              <g class="ship" data-i="3"><path d="M146 38 Q166 48 186 38 Z" fill="#E3BE6A"/><path d="M164 38 V16 L180 32 Z" fill="#F6E6BE"/></g>
+              <g class="ship" data-i="4"><path d="M206 40 Q230 50 254 40 Z" fill="#E3BE6A"/><path d="M228 40 V10 L248 34 Z" fill="#F6E6BE"/><path d="M218 40 V24 L208 36 Z" fill="#F6E6BE"/></g>
+              <g class="ship" data-i="5"><path d="M270 38 Q288 47 306 38 Z" fill="#E3BE6A"/><path d="M286 38 V18 L300 33 Z" fill="#F6E6BE"/></g>
+            </svg>
+            <span class="era-port-label">항구의 배</span>
+          </div>
+        </div>
+
+        <aside class="pron reveal" aria-label="발음 도움말">
+          <span class="pron-label">발음 도움말</span>
+          <span><b lang="vi">Chăm Pa</b> 짬 빠</span>
+          <span><b lang="vi">chúa Nguyễn</b> 쭈어 응우옌</span>
+          <span><b lang="vi">Chùa Cầu</b> 쭈어 꺼우</span>
+        </aside>
+        <p class="src-inline">출처: UNESCO 세계유산센터 · 호이안 문화유산 관리보존센터 · 베트남 정부 전자신문 → <a href="#src-history">출처 목록</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 04 건축 ============ -->
+    <section class="section" id="house" aria-labelledby="house-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num"><span class="sn-badge">04</span><span class="sn-label">건축</span></p>
+          <h2 id="house-title">좁고 깊은 집, 냐 옹</h2>
+          <p class="lead">구시가지의 전형적인 집은 폭이 좁고 안쪽으로 긴 1~2층 목조 상가(<span lang="vi">nhà ống</span>)다. 길에서 뒤쪽 길까지 길게 이어져, 강에서 들어온 물건을 뒤편으로 들여 앞쪽 가게에서 팔 수 있었다.</p>
+        </header>
+
+        <div class="house reveal" id="house-tour" data-active="1">
+          <p class="house-hint">번호를 눌러 집 안으로 들어가 보세요</p>
+          <div class="house-stage">
+            <svg class="house-svg" viewBox="0 0 360 210" role="img" aria-label="호이안 전통 가옥의 단면도: 앞길 쪽 가게, 가운데 채, 안뜰, 뒤채, 강 쪽 뒷문 순서로 이어진다">
+              <g class="h-dim" fill="none" stroke="currentColor" stroke-width="1" stroke-opacity=".5">
+                <path d="M30 22 H330"/><path d="M30 17 V27"/><path d="M330 17 V27"/>
+              </g>
+              <text x="180" y="14" text-anchor="middle" class="h-label">깊이 (길 → 강 쪽)</text>
+              <rect x="0" y="180" width="360" height="30" class="h-ground"/>
+              <rect x="330" y="186" width="30" height="24" class="h-water"/>
+              <text x="15" y="200" text-anchor="middle" class="h-label">앞길</text>
+              <text x="345" y="202" text-anchor="middle" class="h-label h-label-light">강</text>
+
+              <g class="area" id="area-1">
+                <path d="M24 90 L44 64 L96 64 L116 90 Z" class="h-roof"/>
+                <rect x="30" y="90" width="80" height="90" class="h-wall"/>
+                <rect x="30" y="126" width="80" height="4" class="h-beam"/>
+                <rect x="40" y="100" width="18" height="18" class="h-win"/><rect x="82" y="100" width="18" height="18" class="h-win"/>
+                <rect x="40" y="140" width="60" height="40" class="h-open"/>
+                <circle cx="62" cy="134" r="2.4" class="h-eye"/><circle cx="78" cy="134" r="2.4" class="h-eye"/>
+              </g>
+              <g class="area" id="area-2">
+                <path d="M106 120 L120 100 L160 100 L174 120 Z" class="h-roof"/>
+                <rect x="110" y="120" width="60" height="60" class="h-wall"/>
+                <rect x="124" y="140" width="32" height="40" class="h-open"/>
+              </g>
+              <g class="area" id="area-3">
+                <rect x="170" y="150" width="45" height="30" class="h-court"/>
+                <g class="h-rays" stroke-dasharray="3 4"><path d="M180 80 L186 146"/><path d="M193 76 L193 146"/><path d="M206 80 L200 146"/></g>
+                <circle cx="182" cy="170" r="7" class="h-plant"/><circle cx="192" cy="164" r="6" class="h-plant"/>
+                <path d="M200 180 L202 166 L212 166 L214 180 Z" class="h-jar"/>
+              </g>
+              <g class="area" id="area-4">
+                <path d="M209 96 L229 72 L286 72 L306 96 Z" class="h-roof"/>
+                <rect x="215" y="96" width="85" height="84" class="h-wall"/>
+                <rect x="215" y="134" width="85" height="4" class="h-beam"/>
+                <rect x="228" y="106" width="18" height="18" class="h-win"/><rect x="268" y="106" width="18" height="18" class="h-win"/>
+                <rect x="240" y="146" width="36" height="34" class="h-open"/>
+              </g>
+              <g class="area" id="area-5">
+                <path d="M296 140 L304 128 L326 128 L334 140 Z" class="h-roof"/>
+                <rect x="300" y="140" width="30" height="40" class="h-wall"/>
+                <rect x="308" y="152" width="14" height="28" class="h-open"/>
+                <path d="M336 192 Q346 198 356 192 L353 189 L339 189 Z" class="h-boat"/>
+              </g>
+            </svg>
+            <button type="button" class="hot" data-area="1" style="left:19.4%;top:61%" aria-label="1 앞채 가게">1</button>
+            <button type="button" class="hot" data-area="2" style="left:38.9%;top:69.5%" aria-label="2 가운데 채">2</button>
+            <button type="button" class="hot" data-area="3" style="left:53.3%;top:55%" aria-label="3 안뜰">3</button>
+            <button type="button" class="hot" data-area="4" style="left:71.4%;top:62.9%" aria-label="4 뒤채 살림집">4</button>
+            <button type="button" class="hot" data-area="5" style="left:87.5%;top:76.2%" aria-label="5 강 쪽 뒷문">5</button>
+          </div>
+          <div class="house-info" id="house-info" aria-live="polite">
+            <div class="hi" data-area="1">
+              <p class="hi-no">1 · <span lang="vi">nhà trước</span></p>
+              <h3>앞채 — 가게</h3>
+              <p>길을 향해 열린 가게 공간. 한 집안의 장사가 이곳에서 이루어졌다. 대문 위에는 한 쌍의 ‘문의 눈(<span lang="vi">mắt cửa</span>)’이 집을 지킨다.</p>
+            </div>
+            <div class="hi" data-area="2" hidden>
+              <p class="hi-no">2 · <span lang="vi">nhà giữa</span></p>
+              <h3>가운데 채 — 손님맞이</h3>
+              <p>가게와 살림집 사이에서 손님을 맞고 이야기를 나누는 공간이다.</p>
+            </div>
+            <div class="hi" data-area="3" hidden>
+              <p class="hi-no">3 · <span lang="vi">sân trời / giếng trời</span></p>
+              <h3>안뜰 — 하늘 우물</h3>
+              <p>지붕 없이 하늘로 열린 뜰. 길고 깊은 집 안에 빛과 바람을 들이고, 빗물을 빼내는 역할을 한다.</p>
+            </div>
+            <div class="hi" data-area="4" hidden>
+              <p class="hi-no">4 · <span lang="vi">nhà sau</span></p>
+              <h3>뒤채 — 살림집</h3>
+              <p>가족이 먹고 자는 생활 공간. 앞의 가게와 안뜰을 사이에 두고 떨어져 있어 조용하다.</p>
+            </div>
+            <div class="hi" data-area="5" hidden>
+              <p class="hi-no">5 · 뒷길 · 강 쪽</p>
+              <h3>뒷문 — 물건이 들어오는 길</h3>
+              <p>집 뒤편이 뒷길과 강가로 이어져, 배로 들어온 물건을 곧바로 창고와 가게로 옮길 수 있었다. 예를 들어 득안 고가(<span lang="vi">Nhà cổ Đức An</span>)는 폭 7m, 길이 40m에 이른다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="details">
+          <article class="detail reveal">
+            <svg class="detail-ico" viewBox="0 0 96 48" aria-hidden="true">
+              <g fill="#A2502F"><path d="M4 40 Q14 22 24 40 Z"/><path d="M28 40 Q38 22 48 40 Z"/><path d="M52 40 Q62 22 72 40 Z"/><path d="M76 40 Q86 22 96 40 Z"/></g>
+              <g fill="#7A3620"><path d="M16 40 Q26 30 36 40 Q26 36 16 40 Z"/><path d="M40 40 Q50 30 60 40 Q50 36 40 40 Z"/><path d="M64 40 Q74 30 84 40 Q74 36 64 40 Z"/></g>
+            </svg>
+            <h3>음양 기와 <span lang="vi">ngói âm dương</span></h3>
+            <p>오목한 ‘음’ 기와를 위로 향하게 깔고, 볼록한 ‘양’ 기와를 그 위에 엎어 덮는다. 지붕 경사가 가팔라 빗물이 빨리 흘러내린다.</p>
+          </article>
+          <article class="detail reveal">
+            <svg class="detail-ico" viewBox="0 0 96 48" aria-hidden="true">
+              <rect x="8" y="30" width="80" height="16" rx="2" fill="#6B4A2E"/>
+              <g><circle cx="34" cy="20" r="11" fill="#3A2418"/><circle cx="34" cy="20" r="5" fill="#E3BE6A"/><circle cx="62" cy="20" r="11" fill="#3A2418"/><circle cx="62" cy="20" r="5" fill="#E3BE6A"/></g>
+            </svg>
+            <h3>문의 눈 <span lang="vi">mắt cửa</span></h3>
+            <p>대문 위에 한 쌍으로 붙인 나무 ‘눈’. 집을 지켜 주고 재앙을 막아 준다고 믿었다.</p>
+          </article>
+          <article class="detail reveal">
+            <svg class="detail-ico" viewBox="0 0 96 48" aria-hidden="true">
+              <rect x="4" y="18" width="20" height="28" fill="#D99A2B"/><rect x="28" y="12" width="20" height="34" fill="#B8322A"/><rect x="52" y="22" width="20" height="24" fill="#1F5C66"/><rect x="76" y="8" width="16" height="38" fill="#E3BE6A"/>
+            </svg>
+            <h3>섞인 양식</h3>
+            <p>베트남·중국·일본의 목조 기술 위에 19~20세기 프랑스풍 건물이 더해졌다. 한 거리 안에서 여러 문화의 흔적을 볼 수 있다.</p>
+          </article>
+        </div>
+
+        <aside class="pron reveal" aria-label="발음 도움말">
+          <span class="pron-label">발음 도움말</span>
+          <span><b lang="vi">nhà ống</b> 냐 옹</span>
+          <span><b lang="vi">ngói âm dương</b> 응오이 엄 즈엉</span>
+          <span><b lang="vi">mắt cửa</b> 맛 끄어</span>
+          <span><b lang="vi">giếng trời</b> 지엥 쩌이</span>
+        </aside>
+        <p class="src-inline">출처: 베트남 건축 잡지(Tạp chí Kiến trúc) · 호이안 문화유산 관리보존센터 → <a href="#src-house">출처 목록</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 05 명소 ============ -->
+    <section class="section section-alt" id="spots" aria-labelledby="spots-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num"><span class="sn-badge">05</span><span class="sn-label">대표 명소</span></p>
+          <h2 id="spots-title">거리마다 남은 교류의 흔적</h2>
+          <p class="lead">일본인이 세웠다는 다리, 중국 상인들의 회관, 베트남 상인의 집이 한 거리에 나란히 있다. 옆으로 넘겨 보자.</p>
+        </header>
+
+        <div class="spots" role="list">
+          <article class="spot reveal" role="listitem">
+            <svg class="spot-ico" viewBox="0 0 120 64" aria-hidden="true"><path d="M8 50 L16 34 L104 34 L112 50 Z" fill="#6B5040"/><path d="M26 50 Q60 24 94 50 Z" fill="#12303A"/><rect x="20" y="20" width="80" height="14" fill="#C89A45"/><path d="M12 22 L24 10 L96 10 L108 22 Z" fill="#A2502F"/><path d="M48 12 L54 4 L66 4 L72 12 Z" fill="#A2502F"/></svg>
+            <p class="spot-hanja" lang="zh-Hant">來遠橋</p>
+            <h3>내원교 <span lang="vi">Chùa Cầu</span></h3>
+            <p>다리 위에 작은 사당이 있는 지붕 덮인 다리. 한쪽 끝에는 원숭이, 다른 쪽 끝에는 개 석상이 있다. 1990년 국가 유적으로 지정되었고 20,000동 지폐에 그려져 있다.</p>
+            <div class="spot-actions">
+              <button type="button" class="say-mini" data-say="Chùa Cầu">쭈어 꺼우</button>
+              <button type="button" class="link-btn" data-fly="chuacau">지도에서 보기 →</button>
+            </div>
+          </article>
+          <article class="spot reveal" role="listitem">
+            <svg class="spot-ico" viewBox="0 0 120 64" aria-hidden="true"><rect x="22" y="26" width="76" height="30" fill="#E3BE6A"/><path d="M14 28 L30 14 L90 14 L106 28 Z" fill="#B8322A"/><path d="M36 16 L46 6 L74 6 L84 16 Z" fill="#B8322A"/><rect x="48" y="34" width="24" height="22" fill="#6B3325"/><circle cx="36" cy="40" r="5" fill="#B8322A"/><circle cx="84" cy="40" r="5" fill="#B8322A"/></svg>
+            <p class="spot-hanja" lang="zh-Hant">福建會館</p>
+            <h3>복건회관 <span lang="vi">Hội quán Phúc Kiến</span></h3>
+            <p>중국 푸젠 출신 화교들이 세운 회관으로, 바다의 여신 천후(天后)를 모신다. 쩐푸(<span lang="vi">Trần Phú</span>) 거리 46번지.</p>
+            <div class="spot-actions"><button type="button" class="say-mini" data-say="Hội quán Phúc Kiến">호이 꽌 푹 끼엔</button></div>
+          </article>
+          <article class="spot reveal" role="listitem">
+            <svg class="spot-ico" viewBox="0 0 120 64" aria-hidden="true"><rect x="26" y="24" width="68" height="32" fill="#E9CFA0"/><path d="M18 26 L34 12 L86 12 L102 26 Z" fill="#6B3325"/><rect x="50" y="34" width="20" height="22" fill="#B8322A"/><rect x="34" y="32" width="10" height="10" fill="#6B3325"/><rect x="76" y="32" width="10" height="10" fill="#6B3325"/></svg>
+            <p class="spot-hanja" lang="zh-Hant">關公廟</p>
+            <h3>관공묘 <span lang="vi">Quan Công Miếu</span></h3>
+            <p>삼국지의 관우를 모신 사당으로, 사람들은 ‘쭈어 옹(<span lang="vi">Chùa Ông</span>)’이라고도 부른다. 쩐푸 거리 24번지.</p>
+            <div class="spot-actions"><button type="button" class="say-mini" data-say="Quan Công Miếu">꽌 꽁 미에우</button></div>
+          </article>
+          <article class="spot reveal" role="listitem">
+            <svg class="spot-ico" viewBox="0 0 120 64" aria-hidden="true"><rect x="30" y="28" width="60" height="28" fill="#D99A2B"/><path d="M22 30 L38 14 L82 14 L98 30 Z" fill="#6B3325"/><rect x="40" y="36" width="40" height="20" fill="#3A2418"/><rect x="36" y="18" width="48" height="6" fill="#3A2418"/><circle cx="52" cy="32" r="2.5" fill="#3A2418"/><circle cx="68" cy="32" r="2.5" fill="#3A2418"/></svg>
+            <p class="spot-hanja">200년이 넘은 상인 가옥</p>
+            <h3>떤끼 고가 <span lang="vi">Nhà cổ Tấn Ký</span></h3>
+            <p>여러 세대가 이어 살며 옛 상인 집안의 생활 모습을 간직한 집. 응우옌타이혹(<span lang="vi">Nguyễn Thái Học</span>) 거리 101번지.</p>
+            <div class="spot-actions"><button type="button" class="say-mini" data-say="Nhà cổ Tấn Ký">냐 꼬 떤 끼</button></div>
+          </article>
+          <article class="spot reveal" role="listitem">
+            <svg class="spot-ico" viewBox="0 0 120 64" aria-hidden="true"><path d="M10 30 L60 12 L110 30 Z" fill="#A2502F"/><rect x="18" y="30" width="84" height="26" fill="#E9CFA0"/><g fill="#D99A2B"><circle cx="34" cy="48" r="6"/><circle cx="52" cy="50" r="6"/><circle cx="70" cy="48" r="6"/><circle cx="88" cy="50" r="6"/></g><rect x="0" y="56" width="120" height="8" fill="#12303A"/></svg>
+            <p class="spot-hanja">강가의 삶</p>
+            <h3>호이안 시장 <span lang="vi">Chợ Hội An</span></h3>
+            <p>유네스코 등재 설명에도 언급된 재래시장과 나루터. 강가에서 이어지는 호이안 사람들의 일상이 그대로 보인다.</p>
+            <div class="spot-actions"><button type="button" class="say-mini" data-say="Chợ Hội An">쩌 호이안</button></div>
+          </article>
+        </div>
+        <p class="src-inline">출처: 베트남어 위키백과(내원교) · 호이안 문화유산 관리보존센터 · UNESCO 세계유산센터 → <a href="#src-spots">출처 목록</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 06 등불 ============ -->
+    <section class="section section-dark night-sec" id="lantern" aria-labelledby="lantern-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num"><span class="sn-badge">06</span><span class="sn-label">등불과 밤</span></p>
+          <h2 id="lantern-title">등불이 밝히는 밤</h2>
+          <p class="lead">1998년부터 호이안은 음력 매월 14일 밤, 구시가지의 전등을 줄이고 등불을 밝히는 ‘구시가지의 밤(<span lang="vi">Đêm phố cổ</span>)’을 연다. 사람들은 호아이(<span lang="vi">Hoài</span>)강에 작은 꽃등(<span lang="vi">hoa đăng</span>)을 띄워 평안을 빈다.</p>
+        </header>
+
+        <div class="night-grid">
+          <div class="moon-card reveal">
+            <svg class="moon-ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#F6E6BE" opacity=".18"/><circle cx="32" cy="32" r="20" fill="#F6E6BE"/><circle cx="26" cy="27" r="3.5" fill="#E7D3A5"/><circle cx="38" cy="38" r="2.5" fill="#E7D3A5"/></svg>
+            <p class="moon-kicker">다음 ‘구시가지의 밤’</p>
+            <p class="moon-dday" id="moon-dday">음력 매월 14일</p>
+            <p class="moon-date" id="moon-date">베트남 음력(UTC+7) 기준으로 계산합니다.</p>
+            <button type="button" class="btn-lantern" data-night-toggle aria-pressed="false">
+              <svg viewBox="0 0 24 32" width="16" height="22" aria-hidden="true"><line x1="12" y1="0" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><rect x="7" y="4" width="10" height="3" rx="1" fill="currentColor"/><ellipse cx="12" cy="16" rx="9" ry="10" fill="currentColor"/><rect x="8" y="25" width="8" height="2.5" rx="1" fill="currentColor"/></svg>
+              <span class="lbl-off">전등 끄고 등불 켜기</span><span class="lbl-on">전등 다시 켜기</span>
+            </button>
+            <p class="moon-note">페이지 전체가 ‘구시가지의 밤’처럼 바뀝니다.</p>
+          </div>
+
+          <div class="workshop reveal" id="workshop">
+            <h3 class="ws-title">등불 공방 — 나만의 등 만들기</h3>
+            <div class="ws-body">
+              <div class="ws-preview" id="ws-preview" data-shape="round">
+                <svg viewBox="-70 0 140 180" role="img" aria-label="만든 등불 미리보기">
+                  <defs><radialGradient id="ws-glow"><stop offset="0" stop-color="#FFC060" stop-opacity=".9"/><stop offset=".5" stop-color="#FF9A3C" stop-opacity=".3"/><stop offset="1" stop-color="#FF9A3C" stop-opacity="0"/></radialGradient></defs>
+                  <circle class="ws-glow" cx="0" cy="84" r="70" fill="url(#ws-glow)"/>
+                  <line x1="0" y1="0" x2="0" y2="24" stroke="currentColor" stroke-width="2" class="ws-string"/>
+                  <g class="ws-lamp">
+                    <ellipse class="shape shape-round" cx="0" cy="84" rx="44" ry="52"/>
+                    <path class="shape shape-diamond" d="M0 30 Q30 56 48 84 Q30 112 0 138 Q-30 112 -48 84 Q-30 56 0 30 Z"/>
+                    <path class="shape shape-garlic" d="M0 30 C 20 40, 54 58, 50 94 C 47 120, 24 136, 0 136 C -24 136, -47 120, -50 94 C -54 58, -20 40, 0 30 Z"/>
+                    <g class="ribs" fill="none" stroke="#000" stroke-opacity=".16" stroke-width="1.5"><ellipse cx="0" cy="84" rx="14" ry="52"/><ellipse cx="0" cy="84" rx="30" ry="52"/></g>
+                    <ellipse cx="-14" cy="66" rx="8" ry="18" fill="#fff" fill-opacity=".18"/>
+                  </g>
+                  <rect x="-16" y="22" width="32" height="9" rx="2" fill="#3A2418"/>
+                  <rect x="-14" y="133" width="28" height="8" rx="2" fill="#3A2418"/>
+                  <g class="ws-tassel" stroke-width="2.4"><line x1="-5" y1="141" x2="-7" y2="172"/><line x1="0" y1="141" x2="0" y2="176"/><line x1="5" y1="141" x2="7" y2="172"/></g>
+                </svg>
+              </div>
+              <div class="ws-controls">
+                <fieldset>
+                  <legend>① 모양</legend>
+                  <div class="seg">
+                    <label><input type="radio" name="ws-shape" value="round" checked><span>둥근 등</span></label>
+                    <label><input type="radio" name="ws-shape" value="diamond"><span>마름모 등</span></label>
+                    <label><input type="radio" name="ws-shape" value="garlic"><span>마늘 등</span></label>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>② 비단 색</legend>
+                  <div class="swatches">
+                    <label><input type="radio" name="ws-color" value="#C9382E" checked><span style="--c:#C9382E" aria-label="빨강"></span></label>
+                    <label><input type="radio" name="ws-color" value="#F2B233"><span style="--c:#F2B233" aria-label="노랑"></span></label>
+                    <label><input type="radio" name="ws-color" value="#E8762B"><span style="--c:#E8762B" aria-label="주황"></span></label>
+                    <label><input type="radio" name="ws-color" value="#8E4BA8"><span style="--c:#8E4BA8" aria-label="보라"></span></label>
+                    <label><input type="radio" name="ws-color" value="#2F8F8A"><span style="--c:#2F8F8A" aria-label="청록"></span></label>
+                  </div>
+                </fieldset>
+                <button type="button" class="btn-primary ws-light" id="ws-light" aria-pressed="false">③ 불 켜기</button>
+              </div>
+            </div>
+
+            <form class="wish" id="wish-form" autocomplete="off">
+              <label for="wish-text">④ 소원을 적어 꽃등을 강에 띄워 보세요</label>
+              <div class="wish-row">
+                <input type="text" id="wish-text" maxlength="24" placeholder="예: 가족 모두 건강하기를" enterkeyhint="send">
+                <button type="submit" class="btn-float">띄우기</button>
+              </div>
+            </form>
+            <div class="river-strip" id="river-strip" aria-live="polite">
+              <span class="river-count" id="river-count"></span>
+            </div>
+          </div>
+        </div>
+
+        <article class="baichoi reveal">
+          <p class="bc-kicker">알고 계셨나요? · 한국과의 인연</p>
+          <h3>바이 쪼이 <span lang="vi">Bài Chòi</span></h3>
+          <p>노래로 카드를 불러 주는 중부 베트남의 민속 놀이이자 공연 예술로, 호이안 구시가지에서도 즐긴다. 2017년 12월 7일 <b>제주</b>에서 열린 제12차 무형유산 정부간위원회에서 인류무형문화유산으로 등재되었다.</p>
+        </article>
+
+        <aside class="pron reveal" aria-label="발음 도움말">
+          <span class="pron-label">발음 도움말</span>
+          <span><b lang="vi">đèn lồng</b> 댄 롱</span>
+          <span><b lang="vi">hoa đăng</b> 화 당</span>
+          <span><b lang="vi">Đêm phố cổ</b> 뎀 포 꼬</span>
+          <span><b lang="vi">sông Hoài</b> 송 호아이</span>
+          <span><b lang="vi">Bài Chòi</b> 바이 쪼이</span>
+        </aside>
+        <p class="src-inline">출처: 호이안 문화유산 관리보존센터 · 다낭시 전자정보포털 · 베트남 문화유산국 → <a href="#src-lantern">출처 목록</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 07 음식 ============ -->
+    <section class="section" id="food" aria-labelledby="food-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num"><span class="sn-badge">07</span><span class="sn-label">음식</span></p>
+          <h2 id="food-title">호이안의 맛</h2>
+          <p class="lead">무역항의 역사는 음식에도 남아 있다. 카드를 눌러 뒷면의 이야기를 확인해 보자.</p>
+        </header>
+
+        <div class="foods">
+          <button type="button" class="food reveal" aria-pressed="false">
+            <span class="food-face food-front"><span class="food-name">까오러우</span><span class="food-vi" lang="vi">Cao lầu</span><span class="food-line">호이안을 대표하는 비빔국수</span><span class="food-flip">뒤집기 ↻</span></span>
+            <span class="food-face food-back"><span class="food-name">까오러우</span><span class="food-story">쌀을 바레(<span lang="vi">Bá Lễ</span>) 우물 물과 꾸라오짬 섬에서 가져온 재를 우린 잿물로 반죽해, 누렇고 쫄깃한 면을 만든다고 전해진다.</span></span>
+          </button>
+          <button type="button" class="food reveal" aria-pressed="false">
+            <span class="food-face food-front"><span class="food-name">미꽝</span><span class="food-vi" lang="vi">Mì Quảng</span><span class="food-line">꽝남 지방의 대표 국수</span><span class="food-flip">뒤집기 ↻</span></span>
+            <span class="food-face food-back"><span class="food-name">미꽝</span><span class="food-story">넓적한 쌀국수에 국물을 자작하게 붓고, 땅콩과 구운 라이스페이퍼 과자를 곁들여 먹는다.</span></span>
+          </button>
+          <button type="button" class="food reveal" aria-pressed="false">
+            <span class="food-face food-front"><span class="food-name">반미</span><span class="food-vi" lang="vi">Bánh mì</span><span class="food-line">바삭한 바게트 샌드위치</span><span class="food-flip">뒤집기 ↻</span></span>
+            <span class="food-face food-back"><span class="food-name">반미</span><span class="food-story">프랑스식 빵에 베트남 식재료를 채운 샌드위치. 호이안의 반미 가게들은 세계 여행자들에게도 이름이 알려져 있다.</span></span>
+          </button>
+          <button type="button" class="food reveal" aria-pressed="false">
+            <span class="food-face food-front"><span class="food-name">껌가</span><span class="food-vi" lang="vi">Cơm gà</span><span class="food-line">노르스름한 닭고기 덮밥</span><span class="food-flip">뒤집기 ↻</span></span>
+            <span class="food-face food-back"><span class="food-name">껌가</span><span class="food-story">닭 육수로 지은 노르스름한 밥에 잘게 찢은 닭고기와 향채를 올려 먹는 호이안식 닭밥.</span></span>
+          </button>
+          <button type="button" class="food reveal" aria-pressed="false">
+            <span class="food-face food-front"><span class="food-name">화이트 로즈</span><span class="food-vi" lang="vi">Bánh bao bánh vạc</span><span class="food-line">장미를 닮은 만두</span><span class="food-flip">뒤집기 ↻</span></span>
+            <span class="food-face food-back"><span class="food-name">화이트 로즈</span><span class="food-story">얇은 쌀 반죽에 새우 소를 넣어 흰 장미처럼 빚어 찐 만두.</span></span>
+          </button>
+        </div>
+
+        <aside class="pron reveal" aria-label="발음 도움말">
+          <span class="pron-label">발음 도움말</span>
+          <span><b lang="vi">Cao lầu</b> 까오 러우</span>
+          <span><b lang="vi">Mì Quảng</b> 미 꽝</span>
+          <span><b lang="vi">Bánh mì</b> 반 미</span>
+          <span><b lang="vi">Cơm gà</b> 껌 가</span>
+          <span><b lang="vi">Giếng Bá Lễ</b> 지엥 바 레</span>
+        </aside>
+        <p class="src-inline">출처: 호이안 문화유산 관리보존센터(바레 우물) · 비엣트래블(까오러우의 유래) → <a href="#src-food">출처 목록</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 08 보전 ============ -->
+    <section class="section section-alt" id="conserve" aria-labelledby="conserve-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num"><span class="sn-badge">08</span><span class="sn-label">보전과 과제</span></p>
+          <h2 id="conserve-title">지켜야 할 것, 넘어야 할 것</h2>
+          <p class="lead">사람이 살고 장사하는 ‘살아 있는 유산’이기에, 호이안의 보전은 날마다 이어지는 일이다.</p>
+        </header>
+
+        <ul class="stats">
+          <li class="stat reveal">
+            <p class="stat-num"><span class="count" data-to="1107">1,107</span><small>채</small></p>
+            <p class="stat-label">보존된 목조 건축물</p>
+          </li>
+          <li class="stat reveal">
+            <p class="stat-num"><span class="count" data-to="30">30</span><small>+</small><span class="count" data-to="280">280</span><small>ha</small></p>
+            <p class="stat-label">보호 구역 + 완충 구역</p>
+          </li>
+          <li class="stat reveal">
+            <p class="stat-num"><span class="count" data-to="2009" data-plain>2009</span></p>
+            <p class="stat-label">꾸라오짬–호이안 세계 생물권보전지역 (5월 26일)</p>
+          </li>
+          <li class="stat reveal">
+            <p class="stat-num"><span class="count" data-to="2023" data-plain>2023</span></p>
+            <p class="stat-label">유네스코 창의도시 · 공예와 민속예술 (10월 31일)</p>
+          </li>
+        </ul>
+
+        <div class="flood reveal" id="flood">
+          <div class="flood-head">
+            <h3>물에 잠기는 거리</h3>
+            <p>호이안은 투본강 하류에 있어 해마다 우기에 여러 차례 물에 잠긴다. 슬라이더로 거리의 침수 깊이를 올려 보자.</p>
+          </div>
+          <div class="flood-body">
+            <svg class="flood-svg" viewBox="0 0 240 250" role="img" aria-labelledby="flood-out">
+              <defs><clipPath id="flood-clip"><rect x="0" y="0" width="240" height="230"/></clipPath></defs>
+              <g class="fl-house">
+                <path d="M34 62 L58 34 L182 34 L206 62 Z" class="fl-roof"/>
+                <rect x="44" y="62" width="152" height="168" class="fl-wall"/>
+                <rect x="44" y="126" width="152" height="6" class="fl-beam"/>
+                <rect x="60" y="76" width="30" height="36" class="fl-win"/><rect x="150" y="76" width="30" height="36" class="fl-win"/>
+                <rect x="84" y="158" width="72" height="72" class="fl-door"/>
+                <circle cx="108" cy="148" r="4" class="fl-eye"/><circle cx="132" cy="148" r="4" class="fl-eye"/>
+              </g>
+              <g class="fl-person" aria-hidden="true">
+                <circle cx="222" cy="174" r="5.5"/>
+                <path d="M216 182 H228 L227 206 H217 Z"/><path d="M218 206 H221.5 V230 H218 Z"/><path d="M222.5 206 H226 V230 H222.5 Z"/>
+              </g>
+              <text x="222" y="244" text-anchor="middle" class="fl-cap">1.7m</text>
+              <g class="fl-scale">
+                <line x1="26" y1="230" x2="26" y2="80" />
+                <g class="fl-ticks">
+                  <line x1="22" y1="230" x2="30" y2="230"/><text x="19" y="233" text-anchor="end">0</text>
+                  <line x1="22" y1="180" x2="30" y2="180"/><text x="19" y="183" text-anchor="end">1</text>
+                  <line x1="22" y1="130" x2="30" y2="130"/><text x="19" y="133" text-anchor="end">2</text>
+                  <line x1="22" y1="80" x2="30" y2="80"/><text x="19" y="83" text-anchor="end">3m</text>
+                </g>
+              </g>
+              <line x1="24" y1="130" x2="236" y2="130" class="fl-mark"/>
+              <text x="236" y="124" text-anchor="end" class="fl-mark-text">2025.10.30 내원교 일대 약 2m</text>
+              <g clip-path="url(#flood-clip)">
+                <rect id="flood-water" x="0" y="230" width="240" height="0" class="fl-water"/>
+              </g>
+              <rect x="0" y="230" width="240" height="20" class="fl-ground"/>
+            </svg>
+            <div class="flood-ctrl">
+              <label for="flood-range">침수 깊이</label>
+              <input type="range" id="flood-range" min="0" max="3" step="0.1" value="0" aria-describedby="flood-out">
+              <p class="flood-out" id="flood-out"><b>0.0m</b> — 평소의 거리</p>
+            </div>
+          </div>
+          <p class="flood-fact">2025년 10월 30일 새벽, 호이안 관측소의 투본강 수위는 <b>3.39m</b>로 1964년 역대 최고 기록(3.40m)에 불과 1cm 못 미쳤다. 상류 꺼우러우(<span lang="vi">Câu Lâu</span>) 관측소는 5.62m로 1964년 기록(5.48m)을 넘었다. 이때 내원교 일대는 1층이 모두 잠겨 물 깊이가 2m 가까이 된 것으로 보도되었다.</p>
+        </div>
+
+        <div class="people">
+          <article class="person reveal">
+            <p class="person-kicker">보전을 이끈 사람</p>
+            <h3>카지크 <span>Kazimierz Kwiatkowski (1944~1997)</span></h3>
+            <p>폴란드 건축가로, 호이안 사람들은 그를 ‘카지크(Kazik)’라고 부른다. 후에, 미선, 호이안의 유적 보존에 힘썼으며, 호이안은 2007년 쩐푸 거리 138번지에 그를 기리는 카지크 공원을 만들었다.</p>
+          </article>
+          <article class="person reveal">
+            <p class="person-kicker">최근의 복원</p>
+            <h3>내원교 복원 <span>2022.12 – 2024.8.3</span></h3>
+            <p>2022년 12월 시작된 복원 공사가 2년 가까이 이어졌고, 2024년 8월 3일 다리가 다시 방문객을 맞았다.</p>
+          </article>
+        </div>
+
+        <aside class="pron reveal" aria-label="발음 도움말">
+          <span class="pron-label">발음 도움말</span>
+          <span><b lang="vi">lũ lụt</b> 루 룻 <em>(홍수)</em></span>
+          <span><b lang="vi">Câu Lâu</b> 꺼우 러우</span>
+          <span><b lang="vi">Trần Phú</b> 쩐 푸</span>
+        </aside>
+        <p class="src-inline">출처: 뚜오이째(2025.10.30) · 호이안 문화유산 관리보존센터 · 베트남 정부 전자신문 · 베트남 통신사 → <a href="#src-conserve">출처 목록</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 09 한국과의 비교 ============ -->
+    <section class="section" id="compare" aria-labelledby="compare-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num"><span class="sn-badge">09</span><span class="sn-label">한국과의 비교</span></p>
+          <h2 id="compare-title">호이안과 하회·양동마을</h2>
+          <p class="lead">강가에 자리 잡고, 지금도 사람이 사는 두 세계유산.</p>
+        </header>
+
+        <div class="compare reveal" role="table" aria-label="호이안과 하회·양동마을 비교">
+          <div class="cmp-row cmp-head" role="row">
+            <span role="columnheader" class="cmp-key"><span class="sr-only">항목</span></span>
+            <span role="columnheader" class="cmp-a" lang="vi">Hội An</span>
+            <span role="columnheader" class="cmp-b">하회·양동</span>
+          </div>
+          <div class="cmp-row" role="row">
+            <span role="rowheader" class="cmp-key">등재</span>
+            <span role="cell" class="cmp-a">1999 · 제23차 (마라케시)</span>
+            <span role="cell" class="cmp-b">2010 · 제34차 세계유산위원회</span>
+          </div>
+          <div class="cmp-row" role="row">
+            <span role="rowheader" class="cmp-key">성격</span>
+            <span role="cell" class="cmp-a">15~19세기 국제 무역항의 상업 거리</span>
+            <span role="cell" class="cmp-b">14~15세기에 형성된 양반 씨족 마을</span>
+          </div>
+          <div class="cmp-row" role="row">
+            <span role="rowheader" class="cmp-key">건축</span>
+            <span role="cell" class="cmp-a">좁고 깊은 목조 상가, 음양 기와</span>
+            <span role="cell" class="cmp-b">종가의 기와집과 초가, 정자·서원</span>
+          </div>
+          <div class="cmp-row" role="row">
+            <span role="rowheader" class="cmp-key">강</span>
+            <span role="cell" class="cmp-a">투본강 하구 — 강이 무역을 이끌었다</span>
+            <span role="cell" class="cmp-b">하회(河回) — 물이 마을을 휘돌아 흐른다</span>
+          </div>
+        </div>
+
+        <h3 class="common-title reveal">공통점</h3>
+        <ol class="common">
+          <li class="reveal"><span class="common-no">①</span><h4>살아 있는 유산</h4><p>박물관이 아니라, 지금도 주민이 살아가는 곳</p></li>
+          <li class="reveal"><span class="common-no">②</span><h4>강이 만든 터전</h4><p>투본강 ↔ 낙동강·형산강 유역</p></li>
+          <li class="reveal"><span class="common-no">③</span><h4>같은 숙제</h4><p>관광과 주민 생활의 균형</p></li>
+        </ol>
+        <p class="src-inline">출처: UNESCO 세계유산센터 · 국가유산청 → <a href="#src-compare">출처 목록</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 10 퀴즈 ============ -->
+    <section class="section section-alt quiz-section" id="quiz" aria-labelledby="quiz-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-num"><span class="sn-badge">10</span><span class="sn-label">함께 풀어요</span></p>
+          <h2 id="quiz-title">호이안 퀴즈</h2>
+          <p class="lead">발표를 잘 들으셨나요? 7문제를 풀고 나의 호이안 등급을 확인해 보세요.</p>
+        </header>
+        <div class="quiz reveal" id="quiz-app">
+          <noscript><p>퀴즈를 풀려면 JavaScript를 켜 주세요.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 11 맺음말 ============ -->
+    <section class="section closing" id="closing" aria-labelledby="closing-title">
+      <svg class="closing-art" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+        <path d="M0 18 Q300 70 600 26 Q900 -10 1200 34" fill="none" stroke="#3A2A20" stroke-width="1.5"/>
+        <g class="lts">
+          <use href="#lt" x="70" y="30" width="32" height="56" color="#D1382C" class="sw"/>
+          <use href="#lt" x="190" y="44" width="32" height="56" color="#F2B233" class="sw" style="animation-delay:-1.4s"/>
+          <use href="#lt" x="320" y="48" width="32" height="56" color="#8E4BA8" class="sw" style="animation-delay:-2.6s"/>
+          <use href="#lt" x="450" y="40" width="32" height="56" color="#E8762B" class="sw" style="animation-delay:-.8s"/>
+          <use href="#lt" x="584" y="26" width="32" height="56" color="#D1382C" class="sw" style="animation-delay:-3.1s"/>
+          <use href="#lt" x="716" y="16" width="32" height="56" color="#2F8F8A" class="sw" style="animation-delay:-1.9s"/>
+          <use href="#lt" x="850" y="14" width="32" height="56" color="#F2B233" class="sw" style="animation-delay:-.4s"/>
+          <use href="#lt" x="980" y="20" width="32" height="56" color="#D9486E" class="sw" style="animation-delay:-2.2s"/>
+          <use href="#lt" x="1110" y="30" width="32" height="56" color="#D1382C" class="sw" style="animation-delay:-1.1s"/>
+        </g>
+      </svg>
+      <div class="container closing-inner">
+        <p class="section-num reveal"><span class="sn-badge">11</span><span class="sn-label">맺음말</span></p>
+        <h2 id="closing-title" class="reveal">시간이 머무는 항구,<br><span lang="vi">Hội An</span></h2>
+        <p class="closing-text reveal">
+          강이 막혀 항구는 떠났지만, 그 덕분에 옛 거리가 남았다.
+          오늘의 호이안은 등불과 사람들의 삶으로 400년의 시간을 이어 가고 있다.
+        </p>
+
+        <div class="closing-grid">
+          <div class="qr-card reveal">
+            <div class="qr" id="qr" aria-hidden="true"></div>
+            <div>
+              <p class="qr-title"><span class="only-fine">휴대전화로 보기</span><span class="only-coarse">이 페이지 공유하기</span></p>
+              <a class="qr-url" id="qr-url" href="https://tuong06.github.io/quan-ho/hoi-an/">tuong06.github.io/quan-ho/hoi-an</a>
+              <div class="share-row">
+                <button type="button" class="btn-share" id="share-btn" hidden>
+                  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-6.7-3.4a3 3 0 0 0 0-1.6l6.7-3.4A3 3 0 1 0 15 7l-6.7 3.4a3 3 0 1 0 0 3.2L15 17a3 3 0 1 0 3-1z" fill="currentColor"/></svg>
+                  공유하기
+                </button>
+                <button type="button" class="link-btn" id="copy-url">링크 복사</button>
+              </div>
+            </div>
+          </div>
+          <div class="thanks reveal">
+            <p class="thanks-main">들어 주셔서 감사합니다.</p>
+            <p>질문이 있으시면 편하게 말씀해 주세요.</p>
+            <p class="thanks-vi" lang="vi">Cảm ơn các bạn đã lắng nghe!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOURCES ============ -->
+    <section class="section sources" id="sources" aria-labelledby="sources-title">
+      <div class="container">
+        <details class="src-details" id="src-details">
+          <summary>
+            <h2 id="sources-title">출처</h2>
+            <span class="src-hint">섹션별 출처 <b>펼치기</b></span>
+          </summary>
+          <p class="fine">수치와 연도는 아래 공식 기관·언론 자료를 기준으로 했다. 발표 전 최신 정보를 한 번 더 확인하길 권한다.</p>
+          <ol class="src-list">
+            <li id="src-intro"><h3>01 소개와 등재</h3>
+              <p><a href="https://whc.unesco.org/en/list/948/" rel="noopener" target="_blank">UNESCO World Heritage Centre — Hoi An Ancient Town (No. 948)</a></p>
+              <p><a href="https://bvhttdl.gov.vn/ky-niem-25-nam-do-thi-co-hoi-an-duoc-unesco-cong-nhan-di-san-van-hoa-the-gioi-20241205083942368.htm" rel="noopener" target="_blank">베트남 문화체육관광부 — 호이안 세계유산 등재 25주년</a></p></li>
+            <li id="src-place"><h3>02 위치</h3>
+              <p><a href="https://whc.unesco.org/en/list/949/" rel="noopener" target="_blank">UNESCO World Heritage Centre — My Son Sanctuary (No. 949)</a></p>
+              <p><a href="https://xaydungchinhsach.chinhphu.vn/hop-nhat-quang-nam-da-nang-thanh-pho-moi-co-23-phuong-70-xa-va-1-dac-khu-hoang-sa-119250426191156013.htm" rel="noopener" target="_blank">베트남 정부 정책 포털 — 꽝남성·다낭시 통합</a></p>
+              <p class="fine">지도 타일: © <a href="https://www.openstreetmap.org/copyright" rel="noopener" target="_blank">OpenStreetMap</a> contributors, © <a href="https://carto.com/attributions" rel="noopener" target="_blank">CARTO</a> · 지도 라이브러리 Leaflet (BSD-2). 구시가지 원은 개략 표시.</p></li>
+            <li id="src-history"><h3>03 역사</h3>
+              <p><a href="https://hoianheritage.net/vi/trao-doi-chuyen-nganh/chuyen-de-nghien-cuu-trao-doi/nhin-lai-vai-tro-cua-nguoi-nhat-o-thuong-cang-faifo-hoi-an-vao-cuoi-the-ky-xvi-dau-the-ky-xvii-799.html" rel="noopener" target="_blank">호이안 문화유산 관리보존센터 — 16세기 말~17세기 페이포 무역항의 일본인</a></p>
+              <p><a href="https://vi.wikipedia.org/wiki/Ch%C3%B9a_C%E1%BA%A7u" rel="noopener" target="_blank">베트남어 위키백과 — Chùa Cầu</a></p>
+              <p><a href="https://baochinhphu.vn/hoi-an-gia-nhap-mang-luoi-cac-thanh-pho-sang-tao-cua-unesco-102231031172556181.htm" rel="noopener" target="_blank">베트남 정부 전자신문 — 호이안, 유네스코 창의도시 가입</a></p></li>
+            <li id="src-house"><h3>04 건축</h3>
+              <p><a href="https://www.tapchikientruc.com.vn/tac-gia-tac-pham/nha-co-duc-an-hoi-an.html" rel="noopener" target="_blank">베트남 건축 잡지(Tạp chí Kiến trúc) — 득안 고가</a></p>
+              <p><a href="https://hoianheritage.net/vi/trao-doi-chuyen-nganh/chuyen-de-nghien-cuu-trao-doi/tong-quan-ve-di-san-kien-truc-khu-pho-co-hoi-an-1307.html" rel="noopener" target="_blank">호이안 문화유산 관리보존센터 — 구시가지 건축 유산 개관</a></p></li>
+            <li id="src-spots"><h3>05 대표 명소</h3>
+              <p><a href="https://vi.wikipedia.org/wiki/Ch%C3%B9a_C%E1%BA%A7u" rel="noopener" target="_blank">베트남어 위키백과 — Chùa Cầu</a></p>
+              <p><a href="http://www.hoianworldheritage.org.vn/vi/news/Du-lich-Hoi-An/di-dau-2341.hwh" rel="noopener" target="_blank">호이안 세계유산 공식 누리집 — 관람 명소</a></p></li>
+            <li id="src-lantern"><h3>06 등불과 밤</h3>
+              <p><a href="http://www.hoianworldheritage.org.vn/vi/news/Du-lich-Hoi-An/dem-pho-co-14-am-lich-thuong-hieu-dac-sac-cua-hoi-an-2120.hwh" rel="noopener" target="_blank">호이안 세계유산 공식 누리집 — 음력 14일 구시가지의 밤</a></p>
+              <p><a href="https://www.danang.gov.vn/vi/web/dng/w/le-hoi-hoa-dang-hoi-an" rel="noopener" target="_blank">다낭시 전자정보포털 — 호이안 꽃등 축제</a></p>
+              <p><a href="https://dsvh.gov.vn/nghe-thuat-bai-choi-trung-bo-viet-nam-tro-thanh-di-san-van-hoa-phi-vat-the-dai-dien-cua-nhan-loai-1535" rel="noopener" target="_blank">베트남 문화유산국 — 바이 쪼이 인류무형문화유산 등재</a></p></li>
+            <li id="src-food"><h3>07 음식</h3>
+              <p><a href="http://www.hoianworldheritage.org.vn/vi/news/Diem-tham-quan/Gieng-co-Ba-Le-95.hwh" rel="noopener" target="_blank">호이안 세계유산 공식 누리집 — 바레 옛 우물</a></p>
+              <p><a href="https://www.vietravel.com/vn/am-thuc-kham-pha/di-tim-nguon-goc-mon-cao-lau-pho-hoi-v9038.aspx" rel="noopener" target="_blank">비엣트래블 — 까오러우의 유래</a></p></li>
+            <li id="src-conserve"><h3>08 보전과 과제</h3>
+              <p><a href="https://tuoitre.vn/lu-song-thu-bon-vuot-muc-lich-su-nam-thin-1964-20251030045946552.htm" rel="noopener" target="_blank">뚜오이째 — 투본강 홍수, 1964년 기록 초과 (2025.10.30)</a></p>
+              <p><a href="https://hoianheritage.net/vi/trao-doi-chuyen-nganh/chuyen-de-nghien-cuu-trao-doi/kien-truc-su-ba-lan-kazimierz-kwiatkowski-voi-hoi-an-990.html" rel="noopener" target="_blank">호이안 문화유산 관리보존센터 — 폴란드 건축가 카지크와 호이안</a></p>
+              <p><a href="https://nvsk.vnanet.vn/ho-so/khu-du-tru-sinh-quyen-cu-lao-cham-unesco-cong-nhan-ngay-26-5-2009-3-135588.vna" rel="noopener" target="_blank">베트남 통신사 — 꾸라오짬 생물권보전지역 (2009.5.26)</a></p>
+              <p><a href="https://baochinhphu.vn/hoi-an-gia-nhap-mang-luoi-cac-thanh-pho-sang-tao-cua-unesco-102231031172556181.htm" rel="noopener" target="_blank">베트남 정부 전자신문 — 유네스코 창의도시 (2023.10.31)</a></p></li>
+            <li id="src-compare"><h3>09 한국과의 비교</h3>
+              <p><a href="https://whc.unesco.org/en/list/1324/" rel="noopener" target="_blank">UNESCO World Heritage Centre — Historic Villages of Korea: Hahoe and Yangdong (No. 1324)</a></p>
+              <p><a href="https://www.heritage.go.kr" rel="noopener" target="_blank">국가유산청 (heritage.go.kr)</a></p></li>
+            <li id="src-closing"><h3>그림</h3>
+              <p class="fine">이 페이지의 모든 그림(표지, 단면도, 아이콘)은 발표를 위해 새로 그린 일러스트이며, 실제 사진이 아니다.</p></li>
+          </ol>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 레깟뜨엉 · 광운대학교 정보융합학부 · 대학한국어(01) 발표 자료</p>
+    <p class="footer-links"><a href="../">← Quan họ 발표 보기</a><a href="#top" class="to-top">맨 위로 ↑</a></p>
+  </footer>
+
+  <a class="quiz-fab" id="quiz-fab" href="#quiz" aria-label="퀴즈로 이동">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 16.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm1.4-5.3c-.6.4-.9.7-.9 1.3v.4h-2v-.5c0-1.3.7-2 1.4-2.5.6-.4 1-.7 1-1.4a1.4 1.4 0 0 0-2.8 0H8.1a3.4 3.4 0 0 1 6.8 0c0 1.4-.8 2.1-1.5 2.7z" fill="currentColor"/></svg>
+    <span>퀴즈 풀기</span>
+  </a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/vendor/leaflet/leaflet.js"></script>
+  <script src="assets/vendor/qrcode.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

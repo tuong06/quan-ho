@@ -215,7 +215,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .chip.is-active .dot { box-shadow: 0 0 0 2px var(--bg); }
 
 .map-grid { display: grid; gap: 12px; }
-.map-frame { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+.map-frame { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); isolation: isolate; }
 #map { height: 62vh; min-height: 340px; max-height: 560px; background: #EFE7D6; }
 .map-unlock {
   position: absolute; z-index: 500; left: 50%; bottom: 12px; transform: translateX(-50%);
@@ -527,7 +527,7 @@ html { -webkit-tap-highlight-color: transparent; }
 /* ---------- toast ---------- */
 .toast {
   position: fixed; z-index: 70; left: 50%; bottom: calc(80px + env(safe-area-inset-bottom)); transform: translate(-50%, 20px);
-  max-width: calc(100% - 32px); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 12px; font-size: .86rem;
+  width: max-content; max-width: calc(100% - 32px); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 12px; font-size: .86rem;
   opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s var(--ease); text-align: center;
 }
 .toast.is-on { opacity: 1; transform: translate(-50%, 0); }
