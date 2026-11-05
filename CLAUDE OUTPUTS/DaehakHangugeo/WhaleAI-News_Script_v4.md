@@ -12,7 +12,7 @@
 ### Slide 1 — Mở đầu (≈ 15 giây)
 
 > 안녕하십니까. 광운 뉴스 레 깟 뜨엉 기자입니다.
-> 화면 속 고래는 **향유고래**입니다. ← *chỉ tay vào ảnh*
+> 화면 속 고래는 **향유고래**입니다. ← *liếc nhìn màn hình 1 giây*
 > 여러분, 이 고래와 대화할 수 있다면 어떨까요?
 > 오늘은 AI로 고래의 말을 배우는 연구 소식을 전해 드리겠습니다.
 
@@ -38,7 +38,7 @@
 ### Slide 4 — 어디서 · 어떻게: robot dưới nước (≈ 25 giây)
 
 > 그렇다면 연구팀은 어떻게 고래 소리를 모을까요?
-> **사진처럼** 연구팀은 **카리브해 바다**에서 **드론**으로 고래를 찾고, **수중 마이크**로 소리를 녹음합니다. ← *chỉ vào 2 ảnh nhỏ*
+> **사진처럼** 연구팀은 **카리브해 바다**에서 **드론**으로 고래를 찾고, **수중 마이크**로 소리를 녹음합니다. ← *liếc nhìn màn hình 1 giây*
 > AI 수중 로봇도 **몇 달 동안** 고래를 따라가면서 고래의 소리와 행동을 **실시간으로** 기록합니다.
 
 *Vậy nhóm nghiên cứu thu thập tiếng cá voi bằng cách nào? Như trong ảnh, ở biển Caribe nhóm dùng drone để tìm cá voi và micro dưới nước để ghi âm. Robot AI dưới nước cũng đi theo cá voi nhiều tháng, ghi lại âm thanh và hành động của chúng theo thời gian thực.*
@@ -46,7 +46,7 @@
 ### Slide 5 — 어떻게: 3 bước (≈ 35 giây)
 
 > 연구는 세 단계로 진행됩니다.
-> **첫째**, **사진 속 연구원처럼** 고래의 소리와 행동을 녹음합니다. ← *chỉ vào ảnh STEP 1*
+> **첫째**, **사진 속 연구원처럼** 고래의 소리와 행동을 녹음합니다. ← *liếc nhìn màn hình 1 giây*
 > **둘째**, AI가 반복되는 소리 패턴을 찾습니다.
 > **셋째**, 어떤 소리가 어떤 뜻인지 찾습니다.
 > 하지만 아직 고래의 말을 **번역하지는 못했습니다**. 연구는 지금도 계속되고 있습니다.
@@ -135,7 +135,7 @@ Bạn không cần học thuộc từng chữ. Hãy học **từ khóa trên sli
 
 **Mẹo khi đứng thuyết trình:**
 - Nghỉ 1 nhịp sau mỗi câu, vì bài tin dùng câu ngắn.
-- Ở slide 2 và slide 3, chỉ tay vào màn hình khi nói "화면을 보시면" và khi đọc số "8,719". Cô yêu cầu báo tin dựa trên tư liệu trong PPT, nên động tác này cho thấy bạn làm đúng yêu cầu.
+- Không cần chỉ tay. Khi nói "화면 속", "화면을 보시면", "사진처럼", "사진 속" chỉ cần quay đầu nhìn màn hình khoảng 1 giây rồi nhìn lại khán giả. Chính các câu này cho cô thấy bạn báo tin dựa trên ảnh trong PPT.
 - Nếu quên câu, chỉ cần đọc từ khóa trên slide thành câu "~습니다". Ví dụ, nhìn "고래 보호" thì nói "고래를 보호합니다".
 
 ---
