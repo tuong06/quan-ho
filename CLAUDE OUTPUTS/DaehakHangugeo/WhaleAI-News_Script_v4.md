@@ -1,0 +1,222 @@
+# Bài thuyết trình: 고래와 대화할 수 있을까? (v4 — bản cuối)
+
+- Môn: 대학한국어(01) — 기말 발표 (뉴스 보도)
+- Thời lượng mục tiêu: **khoảng 2 phút 30 giây** (giới hạn 3 phút)
+- Độ dài: khoảng 540 âm tiết, 27 câu ngắn (đọc chậm vẫn dưới 2 phút 45 giây)
+- Đi kèm: `WhaleAI-News_Deck_v9.pptx` (bản dự phòng: `WhaleAI-News_Deck_v9.pdf`) (script này đã nằm trong Speaker Notes)
+
+---
+
+## 1. Script đầy đủ (bản nộp cô trước 22/11)
+
+### Slide 1 — Mở đầu (≈ 15 giây)
+
+> 안녕하십니까. 광운 뉴스 레 깟 뜨엉 기자입니다.
+> 화면 속 고래는 **향유고래**입니다. ← *chỉ tay vào ảnh*
+> 여러분, 이 고래와 대화할 수 있다면 어떨까요?
+> 오늘은 AI로 고래의 말을 배우는 연구 소식을 전해 드리겠습니다.
+
+*Xin chào. Tôi là phóng viên Lê Cát Tường của Kwangwoon News. Cá voi trên màn hình là cá voi nhà táng. Các bạn ơi, nếu có thể nói chuyện với con cá voi này thì sao nhỉ? Hôm nay tôi xin đưa tin về nghiên cứu dùng AI để học ngôn ngữ của cá voi.*
+
+### Slide 2 — 육하원칙 tóm tắt (≈ 30 giây)
+
+> 먼저 화면을 보시면, 오늘 뉴스를 한눈에 볼 수 있습니다.
+> **YTN 보도에 따르면**, **CETI 연구팀**은 **2026년 6월** **카리브해 바다**에서 **AI 수중 로봇**으로 **고래의 소리**를 따라가기 시작했습니다.
+> 그 이유는 **고래를 보호하기** 위해서입니다.
+
+*Trước tiên, nhìn lên màn hình, các bạn có thể thấy toàn bộ bản tin hôm nay. Theo bản tin của YTN, vào tháng 6/2026 nhóm nghiên cứu CETI đã bắt đầu dùng robot AI dưới nước để theo dõi âm thanh cá voi ở biển Caribe. Lý do là để bảo vệ cá voi.*
+
+### Slide 3 — 무엇을: "bảng chữ cái" của cá voi (≈ 35 giây)
+
+> 향유고래는 ‘딸깍딸깍’ 소리로 이야기합니다.
+> 연구팀은 AI로 이 소리 **8,719개**를 분석했습니다.
+> 그 결과, 고래 소리에는 **리듬, 템포, 루바토, 장식음**, 이렇게 네 가지 요소가 있었습니다.
+> 고래는 사람의 알파벳처럼 이 요소들을 조합해서 소리를 만듭니다.
+
+*Cá voi nhà táng nói chuyện bằng tiếng "tách tách". Nhóm nghiên cứu đã dùng AI phân tích 8.719 âm thanh này. Kết quả là trong tiếng cá voi có bốn yếu tố: nhịp, tốc độ, rubato và âm trang trí. Cá voi kết hợp các yếu tố này để tạo âm thanh, giống như bảng chữ cái của con người.*
+
+### Slide 4 — 어디서 · 어떻게: robot dưới nước (≈ 25 giây)
+
+> 그렇다면 연구팀은 어떻게 고래 소리를 모을까요?
+> **사진처럼** 연구팀은 **카리브해 바다**에서 **드론**으로 고래를 찾고, **수중 마이크**로 소리를 녹음합니다. ← *chỉ vào 2 ảnh nhỏ*
+> AI 수중 로봇도 **몇 달 동안** 고래를 따라가면서 고래의 소리와 행동을 **실시간으로** 기록합니다.
+
+*Vậy nhóm nghiên cứu thu thập tiếng cá voi bằng cách nào? Như trong ảnh, ở biển Caribe nhóm dùng drone để tìm cá voi và micro dưới nước để ghi âm. Robot AI dưới nước cũng đi theo cá voi nhiều tháng, ghi lại âm thanh và hành động của chúng theo thời gian thực.*
+
+### Slide 5 — 어떻게: 3 bước (≈ 35 giây)
+
+> 연구는 세 단계로 진행됩니다.
+> **첫째**, **사진 속 연구원처럼** 고래의 소리와 행동을 녹음합니다. ← *chỉ vào ảnh STEP 1*
+> **둘째**, AI가 반복되는 소리 패턴을 찾습니다.
+> **셋째**, 어떤 소리가 어떤 뜻인지 찾습니다.
+> 하지만 아직 고래의 말을 **번역하지는 못했습니다**. 연구는 지금도 계속되고 있습니다.
+
+*Nghiên cứu diễn ra theo ba bước. Thứ nhất, giống như nhà nghiên cứu trong ảnh, ghi âm âm thanh và hành động của cá voi. Thứ hai, AI tìm các mẫu âm thanh lặp lại. Thứ ba, tìm xem âm thanh nào mang nghĩa gì. Tuy nhiên, hiện vẫn chưa dịch được tiếng cá voi. Nghiên cứu vẫn đang tiếp tục.*
+
+### Slide 6 — 왜 + kết (≈ 30 giây)
+
+> 연구팀은 고래의 말을 이해하면 고래를 **더 잘 보호할 수 있다고** 밝혔습니다.
+> 그리고 언젠가 사람과 고래가 **대화할 수 있을 것으로** 보고 있습니다.
+> AI는 이제 동물의 말까지 이해하려고 합니다.
+> 지금까지 광운 뉴스 레 깟 뜨엉이었습니다. 감사합니다.
+
+*Nhóm nghiên cứu cho biết nếu hiểu tiếng cá voi thì có thể bảo vệ cá voi tốt hơn. Và họ cho rằng một ngày nào đó con người và cá voi có thể trò chuyện với nhau. AI giờ đây đang cố gắng hiểu cả tiếng nói của động vật. Bản tin Kwangwoon News của Lê Cát Tường xin kết thúc tại đây. Cảm ơn các bạn.*
+
+---
+
+## 2. Kiểm tra 육하원칙
+
+| Yếu tố | Câu trong script | Slide |
+|---|---|---|
+| 누가 | CETI 연구팀이 | 2 |
+| 언제 | 2026년 6월 | 2 |
+| 어디에서 | 카리브해 바다에서 | 2, 4 |
+| 무엇을 | 고래의 소리를 따라가기 / 8,719개를 분석 | 2, 3 |
+| 왜 | 고래를 보호하기 위해서입니다 | 2, 6 |
+| 어떻게 | AI 수중 로봇 / 세 단계 | 2, 4, 5 |
+
+---
+
+## 3. Cách học thuộc nhanh: nhìn slide là nhớ câu
+
+Bạn không cần học thuộc từng chữ. Hãy học **từ khóa trên slide**, rồi từ khóa sẽ gợi ra câu.
+
+| Slide | Nhìn thấy trên slide | Câu tương ứng |
+|---|---|---|
+| 1 | 고래와 대화할 수 있을까? | Đọc lại câu tiêu đề thành câu hỏi "~수 있다면 어떨까요?" |
+| 2 | 6 ô lục giác | Đọc lần lượt từ trái sang phải, trên xuống dưới: 누가, 언제, 어디, 무엇을 → 어떻게 → 왜 |
+| 3 | Số 8,719 → 4 ô | "분석했습니다" → "네 가지 요소" → "알파벳처럼" |
+| 4 | 3 icon 📍 ⏱ 🎙 + ảnh drone và micro | 카리브해 → 드론·수중 마이크 → 몇 달 동안 → 실시간 녹음 |
+| 5 | STEP 1, 2, 3 + khung vàng | 첫째, 둘째, 셋째 → "하지만 아직…" |
+| 6 | 왜? / 앞으로 | 보호 → 대화 → câu kết cố định |
+
+**Các mẫu câu lặp lại trong bài** (học 6 mẫu này là nói được cả bài):
+
+| Mẫu | Nghĩa | Dùng ở |
+|---|---|---|
+| ~고 있습니다 | đang ~ | 2, 5 |
+| ~ㅂ니다 / ~습니다 | đuôi câu bản tin | mọi slide |
+| ~기 위해서입니다 | là để ~ | 2 |
+| ~처럼 | giống như ~ | 3 |
+| ~다고 밝혔습니다 | cho biết rằng ~ | 6 |
+| ~ㄹ 것으로 보고 있습니다 | dự đoán rằng ~ | 6 |
+| ~에 따르면 | theo ~ (dẫn nguồn tin) | 2 |
+
+---
+
+## 4. Từ dễ phát âm sai
+
+| Từ | Đọc là | Nghĩa |
+|---|---|---|
+| 8,719개 | **팔천칠백십구 개** | 8.719 cái |
+| 향유고래 | [향유고래] | cá voi nhà táng |
+| 분석했습니다 | [분서캗씀니다] | đã phân tích |
+| 녹음합니다 | [노금함니다] | ghi âm |
+| 실시간으로 | [실씨가느로] | theo thời gian thực |
+| 행동 | [행동] | hành động |
+| 조합해서 | [조하패서] | kết hợp |
+| 밝혔습니다 | [발켣씀니다] | đã cho biết |
+| 첫째 | [첟째] | thứ nhất |
+| 계속되고 | [계속뙤고] | tiếp tục |
+| 드론 | [드론] | drone, máy bay không người lái |
+| 수중 마이크 | [수중 마이크] | micro thu âm dưới nước |
+
+---
+
+## 5. Lịch tập đến ngày thuyết trình
+
+| Thời gian | Việc |
+|---|---|
+| Trước 22/11 | Gửi URL bài YTN và phần 1 (script tiếng Hàn) cho cô |
+| 23–28/11 | Chèn ảnh thật vào slide 1 và slide 4, gửi PPT trước **29/11** |
+| 30/11–3/12 | Mỗi ngày đọc thành tiếng 2 lần, nhìn script |
+| 4–5/12 | Chỉ nhìn slide, không nhìn script, bấm giờ (mục tiêu 2:30) |
+| 6/12 | Tập đứng như phóng viên, nhìn khán giả ở câu mở đầu và câu kết |
+
+**Mẹo khi đứng thuyết trình:**
+- Nghỉ 1 nhịp sau mỗi câu, vì bài tin dùng câu ngắn.
+- Ở slide 2 và slide 3, chỉ tay vào màn hình khi nói "화면을 보시면" và khi đọc số "8,719". Cô yêu cầu báo tin dựa trên tư liệu trong PPT, nên động tác này cho thấy bạn làm đúng yêu cầu.
+- Nếu quên câu, chỉ cần đọc từ khóa trên slide thành câu "~습니다". Ví dụ, nhìn "고래 보호" thì nói "고래를 보호합니다".
+
+---
+
+## 6. Trước khi nộp, đối chiếu với bài gốc
+
+- "2026년 6월" và "카리브해": kiểm tra trong bài YTN ngày 14/6/2026.
+- "8,719개", "약 60마리": kiểm tra trong bài AI타임스.
+
+Nếu bài gốc ghi khác, sửa cả script lẫn slide 2.
+
+---
+
+## 7. Câu hỏi cô có thể hỏi sau phần thuyết trình
+
+Trả lời ngắn, dùng lại từ vựng đã có trong bài.
+
+| Câu hỏi có thể gặp | Trả lời mẫu |
+|---|---|
+| 왜 이 뉴스를 선택했어요? | 저는 데이터 사이언스를 전공합니다. 그래서 AI가 동물의 말을 이해하는 연구가 아주 신기했습니다. |
+| 고래의 말을 정말 번역할 수 있어요? | 아직은 번역하지 못했습니다. 지금은 소리의 규칙을 찾는 단계입니다. |
+| 이 연구가 왜 중요해요? | 고래의 말을 이해하면 고래를 더 잘 보호할 수 있기 때문입니다. |
+| CETI는 무엇이에요? | 고래의 소리를 연구하는 국제 연구 프로젝트입니다. |
+
+---
+
+## 8. Thẻ nhắc 1 trang (in ra, cầm khi tập — không đưa lên slide)
+
+| Slide | Câu mở đầu | Từ khóa phải nói |
+|---|---|---|
+| 1 | 안녕하십니까. 광운 뉴스… | 향유고래 · 대화 |
+| 2 | 먼저 화면을 보시면… | YTN 보도에 따르면 · CETI · 2026년 6월 · 카리브해 · AI 수중 로봇 · 보호 |
+| 3 | 향유고래는 딸깍딸깍… | 8,719개 · 네 가지 요소 · 알파벳 |
+| 4 | 그렇다면 어떻게…? | 사진처럼 · 드론 · 수중 마이크 · 실시간 |
+| 5 | 연구는 세 단계로… | 첫째 · 둘째 · 셋째 · 아직 번역 못 함 |
+| 6 | 연구팀은… 밝혔습니다 | 보호 · 대화 · 감사합니다 |
+
+---
+
+## 9. Email nộp bài (copy dùng ngay)
+
+**Hạn 22/11: link bài báo + script**
+
+```
+제목: [대학한국어(01)] 기말 발표 뉴스 스크립트 제출 - 레 깟 뜨엉(학번)
+
+유혜선 선생님, 안녕하세요.
+대학한국어(01) 수업을 듣는 레 깟 뜨엉(학번)입니다.
+
+기말 발표 뉴스와 스크립트를 제출합니다.
+- 뉴스 제목: "고래와 대화하는 시대 올까?"…AI 로봇, 고래 언어 해독 나선다
+- 뉴스 주소: https://www.ytn.co.kr/_ln/0104_202606140250175796
+- 뉴스 스크립트: 첨부 파일 참고
+
+확인해 주시면 감사하겠습니다.
+레 깟 뜨엉 드림
+```
+
+**Hạn 29/11: PPT**
+
+```
+제목: [대학한국어(01)] 기말 발표 PPT 제출 - 레 깟 뜨엉(학번)
+
+유혜선 선생님, 안녕하세요.
+대학한국어(01) 레 깟 뜨엉(학번)입니다.
+
+기말 발표 PPT를 첨부 파일로 보내 드립니다.
+확인해 주시면 감사하겠습니다.
+
+레 깟 뜨엉 드림
+```
+
+Đính kèm file: `WhaleAI-News_Deck_v9.pptx`. Script nộp ngày 22/11 nên chỉ lấy **phần 1** (tiếng Hàn), bỏ phần tiếng Việt.
+
+---
+
+## 10. Phòng sự cố kỹ thuật hôm 7/12 hoặc 9/12
+
+| Rủi ro | Cách phòng |
+|---|---|
+| Máy lớp không có font Malgun Gothic (máy Mac) | Máy Windows ở trường có sẵn. Nếu là Mac, mở bản PDF dự phòng |
+| File PPT lỗi hoặc không mở được | Mang theo `WhaleAI-News_Deck_v9.pdf` trong USB và trong email của bạn |
+| Hiệu ứng chạy chậm | Mọi hiệu ứng tự chạy dưới 4 giây. Bắt đầu nói ngay, không cần chờ |
+| Quên câu | Nhìn từ khóa trên slide rồi nói thành câu `~습니다` (xem thẻ nhắc ở phần 8) |
